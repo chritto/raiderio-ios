@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RIORootViewController.h
 //  RaiderIO
 //
 //  Created by Chris McGrath on 10/29/18.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface RIORootViewController : UIViewController
 
 
 @end

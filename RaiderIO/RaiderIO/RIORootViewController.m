@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  RIORootViewController.m
 //  RaiderIO
 //
 //  Created by Chris McGrath on 10/29/18.
 //  Copyright © 2018 Chris McGrath. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RIORootViewController.h"
 
-@interface ViewController ()
+@interface RIORootViewController ()
 
 @end
 
-@implementation ViewController
+@implementation RIORootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
