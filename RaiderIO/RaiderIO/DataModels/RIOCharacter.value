@@ -1,0 +1,4 @@
+RIOCharacter {
+    NSString *name
+    NSString *realm
+}

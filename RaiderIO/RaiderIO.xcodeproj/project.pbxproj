@@ -100,6 +100,7 @@
 		AC3F9F0C21882CF200679F1F /* RaiderIO */ = {
 			isa = PBXGroup;
 			children = (
+				ACF60E80218997A900E30606 /* DataModels */,
 				AC3F9F0D21882CF200679F1F /* AppDelegate.h */,
 				AC3F9F0E21882CF200679F1F /* AppDelegate.m */,
 				AC3F9F1021882CF200679F1F /* RIORootViewController.h */,
@@ -119,6 +120,13 @@
 				AC3F9F2821882CF300679F1F /* Info.plist */,
 			);
 			path = RaiderIOTests;
+			sourceTree = "<group>";
+		};
+		ACF60E80218997A900E30606 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		C124595CA3A39DB951323515 /* Pods */ = {
