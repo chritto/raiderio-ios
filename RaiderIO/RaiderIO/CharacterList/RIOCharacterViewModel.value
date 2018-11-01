@@ -1,0 +1,4 @@
+RIOCharacterViewModel includes(IGListDiffable) {
+    NSString *name
+    NSString *realm
+}

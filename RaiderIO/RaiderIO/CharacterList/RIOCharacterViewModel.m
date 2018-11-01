@@ -1,15 +1,15 @@
 /**
  * This file is generated using the remodel generation script.
- * The name of the input file is RIOCharacter.value
+ * The name of the input file is RIOCharacterViewModel.value
  */
 
 #if  ! __has_feature(objc_arc)
 #error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
-#import "RIOCharacter.h"
+#import "RIOCharacterViewModel.h"
 
-@implementation RIOCharacter
+@implementation RIOCharacterViewModel
 
 - (instancetype)initWithName:(NSString *)name realm:(NSString *)realm
 {
@@ -31,6 +31,11 @@
   return [NSString stringWithFormat:@"%@ - \n\t name: %@; \n\t realm: %@; \n", [super description], _name, _realm];
 }
 
+- (id<NSObject>)diffIdentifier
+{
+  return self;
+}
+
 - (NSUInteger)hash
 {
   NSUInteger subhashes[] = {[_name hash], [_realm hash]};
@@ -48,7 +53,7 @@
   return result;
 }
 
-- (BOOL)isEqual:(RIOCharacter *)object
+- (BOOL)isEqual:(RIOCharacterViewModel *)object
 {
   if (self == object) {
     return YES;
@@ -58,6 +63,11 @@
   return
     (_name == object->_name ? YES : [_name isEqual:object->_name]) &&
     (_realm == object->_realm ? YES : [_realm isEqual:object->_realm]);
+}
+
+- (BOOL)isEqualToDiffableObject:(nullable id)object
+{
+  return [self isEqual:object];
 }
 
 @end

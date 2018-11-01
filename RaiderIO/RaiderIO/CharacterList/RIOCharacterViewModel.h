@@ -1,11 +1,12 @@
 /**
  * This file is generated using the remodel generation script.
- * The name of the input file is RIOCharacter.value
+ * The name of the input file is RIOCharacterViewModel.value
  */
 
 #import <Foundation/Foundation.h>
+#import <IGListKit/IGListDiffable.h>
 
-@interface RIOCharacter : NSObject <NSCopying>
+@interface RIOCharacterViewModel : NSObject <IGListDiffable, NSCopying>
 
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *realm;

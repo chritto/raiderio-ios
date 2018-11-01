@@ -10,6 +10,5 @@
 
 @interface RIORootViewController : UIViewController
 
-
 @end
 

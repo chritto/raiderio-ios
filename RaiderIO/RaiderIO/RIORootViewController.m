@@ -8,17 +8,23 @@
 
 #import "RIORootViewController.h"
 
-@interface RIORootViewController ()
+#import "RIOCharacterListViewController.h"
 
-@end
-
-@implementation RIORootViewController
+@implementation RIORootViewController {
+    RIOCharacterListViewController *_characterListViewController;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    _characterListViewController = [[RIOCharacterListViewController alloc] init];
+    [self addChildViewController:_characterListViewController];
+    [self.view addSubview:_characterListViewController.view];
+    [_characterListViewController didMoveToParentViewController:self];
 }
 
+- (void)viewDidLayoutSubviews {
+    _characterListViewController.view.frame = self.view.bounds;
+}
 
 @end
