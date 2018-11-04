@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6BAA6731F5CB62E49726756C /* libPods-RaiderIOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51280EB80594DB4C32C0ED27 /* libPods-RaiderIOTests.a */; };
+		AC2EF19A218D861000C92D37 /* RIOCharacterService.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF199218D861000C92D37 /* RIOCharacterService.m */; };
+		AC2EF19F218F589100C92D37 /* RIOGuild.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF19C218F589000C92D37 /* RIOGuild.m */; };
+		AC2EF1A0218F589100C92D37 /* RIOCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF19D218F589000C92D37 /* RIOCharacter.m */; };
 		AC3F9F0F21882CF200679F1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3F9F0E21882CF200679F1F /* AppDelegate.m */; };
 		AC3F9F1221882CF200679F1F /* RIORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3F9F1121882CF200679F1F /* RIORootViewController.m */; };
 		AC3F9F1721882CF200679F1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3F9F1621882CF200679F1F /* Assets.xcassets */; };
@@ -37,6 +40,12 @@
 		51280EB80594DB4C32C0ED27 /* libPods-RaiderIOTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RaiderIOTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69420C5540F7FE9028975975 /* Pods-RaiderIO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiderIO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaiderIO/Pods-RaiderIO.debug.xcconfig"; sourceTree = "<group>"; };
 		760A8336544DA1A4A5D09461 /* Pods-RaiderIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiderIO.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaiderIO/Pods-RaiderIO.release.xcconfig"; sourceTree = "<group>"; };
+		AC2EF198218D861000C92D37 /* RIOCharacterService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterService.h; sourceTree = "<group>"; };
+		AC2EF199218D861000C92D37 /* RIOCharacterService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterService.m; sourceTree = "<group>"; };
+		AC2EF19B218F589000C92D37 /* RIOGuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOGuild.h; sourceTree = "<group>"; };
+		AC2EF19C218F589000C92D37 /* RIOGuild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOGuild.m; sourceTree = "<group>"; };
+		AC2EF19D218F589000C92D37 /* RIOCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOCharacter.m; sourceTree = "<group>"; };
+		AC2EF19E218F589000C92D37 /* RIOCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOCharacter.h; sourceTree = "<group>"; };
 		AC3F9F0A21882CF200679F1F /* RaiderIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiderIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3F9F0D21882CF200679F1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AC3F9F0E21882CF200679F1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +102,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AC2EF197218D85DF00C92D37 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC2EF198218D861000C92D37 /* RIOCharacterService.h */,
+				AC2EF199218D861000C92D37 /* RIOCharacterService.m */,
+				AC2EF19E218F589000C92D37 /* RIOCharacter.h */,
+				AC2EF19D218F589000C92D37 /* RIOCharacter.m */,
+				AC2EF19B218F589000C92D37 /* RIOGuild.h */,
+				AC2EF19C218F589000C92D37 /* RIOGuild.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		AC3F9F0121882CF200679F1F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +138,7 @@
 		AC3F9F0C21882CF200679F1F /* RaiderIO */ = {
 			isa = PBXGroup;
 			children = (
+				AC2EF197218D85DF00C92D37 /* Services */,
 				ACF60E8C218999EF00E30606 /* Utilities */,
 				ACF60E85218998C300E30606 /* CharacterList */,
 				AC3F9F0D21882CF200679F1F /* AppDelegate.h */,
@@ -331,6 +354,9 @@
 				ACA03C732189A2A900BAA882 /* RIOCharacterViewModel+Layout.m in Sources */,
 				ACA03C702189A21700BAA882 /* RIOCharacterCell.m in Sources */,
 				AC3F9F0F21882CF200679F1F /* AppDelegate.m in Sources */,
+				AC2EF19F218F589100C92D37 /* RIOGuild.m in Sources */,
+				AC2EF1A0218F589100C92D37 /* RIOCharacter.m in Sources */,
+				AC2EF19A218D861000C92D37 /* RIOCharacterService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

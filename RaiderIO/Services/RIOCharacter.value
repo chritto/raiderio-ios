@@ -1,0 +1,16 @@
+RIOCharacter {
+    NSString *name
+    NSString *race
+    NSString *characterClass
+    NSString *activeSpecName
+    NSString *activeSpecRole
+    NSString *gender
+    NSString *faction
+    NSInteger achievementPoints
+    NSInteger honorableKills
+    NSURL *thumbnailURL
+    NSString *region
+    NSString *realm
+    NSURL *profileURL
+    RIOGuild *guild
+}
