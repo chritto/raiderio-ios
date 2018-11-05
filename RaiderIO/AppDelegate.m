@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "RIORootViewController.h"
+#import "RIOCharacterListViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
     // Override point for customization after application launch.
 
     UIWindow * const window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.rootViewController = [RIORootViewController new];
+    window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[RIOCharacterListViewController new]];
     [window makeKeyAndVisible];
     self.window = window;
 

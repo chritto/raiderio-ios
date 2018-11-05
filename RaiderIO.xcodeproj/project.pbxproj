@@ -12,7 +12,6 @@
 		AC2EF19F218F589100C92D37 /* RIOGuild.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF19C218F589000C92D37 /* RIOGuild.m */; };
 		AC2EF1A0218F589100C92D37 /* RIOCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF19D218F589000C92D37 /* RIOCharacter.m */; };
 		AC3F9F0F21882CF200679F1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3F9F0E21882CF200679F1F /* AppDelegate.m */; };
-		AC3F9F1221882CF200679F1F /* RIORootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3F9F1121882CF200679F1F /* RIORootViewController.m */; };
 		AC3F9F1721882CF200679F1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3F9F1621882CF200679F1F /* Assets.xcassets */; };
 		AC3F9F1A21882CF200679F1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3F9F1821882CF200679F1F /* LaunchScreen.storyboard */; };
 		AC3F9F1D21882CF300679F1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3F9F1C21882CF300679F1F /* main.m */; };
@@ -49,8 +48,6 @@
 		AC3F9F0A21882CF200679F1F /* RaiderIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaiderIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3F9F0D21882CF200679F1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AC3F9F0E21882CF200679F1F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AC3F9F1021882CF200679F1F /* RIORootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIORootViewController.h; sourceTree = "<group>"; };
-		AC3F9F1121882CF200679F1F /* RIORootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIORootViewController.m; sourceTree = "<group>"; };
 		AC3F9F1621882CF200679F1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC3F9F1921882CF200679F1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC3F9F1B21882CF200679F1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +99,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AC2EF197218D85DF00C92D37 /* Services */ = {
+		AC0A9ACD21900766002BD60F /* Character */ = {
 			isa = PBXGroup;
 			children = (
 				AC2EF198218D861000C92D37 /* RIOCharacterService.h */,
@@ -111,6 +108,30 @@
 				AC2EF19D218F589000C92D37 /* RIOCharacter.m */,
 				AC2EF19B218F589000C92D37 /* RIOGuild.h */,
 				AC2EF19C218F589000C92D37 /* RIOGuild.m */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		AC0A9ACE21900851002BD60F /* Character */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		AC0A9ACF21900888002BD60F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				ACF60E85218998C300E30606 /* CharacterList */,
+				AC0A9ACE21900851002BD60F /* Character */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		AC2EF197218D85DF00C92D37 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AC0A9ACD21900766002BD60F /* Character */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -138,13 +159,11 @@
 		AC3F9F0C21882CF200679F1F /* RaiderIO */ = {
 			isa = PBXGroup;
 			children = (
-				AC2EF197218D85DF00C92D37 /* Services */,
 				ACF60E8C218999EF00E30606 /* Utilities */,
-				ACF60E85218998C300E30606 /* CharacterList */,
+				AC2EF197218D85DF00C92D37 /* Services */,
+				AC0A9ACF21900888002BD60F /* Screens */,
 				AC3F9F0D21882CF200679F1F /* AppDelegate.h */,
 				AC3F9F0E21882CF200679F1F /* AppDelegate.m */,
-				AC3F9F1021882CF200679F1F /* RIORootViewController.h */,
-				AC3F9F1121882CF200679F1F /* RIORootViewController.m */,
 				AC3F9F1621882CF200679F1F /* Assets.xcassets */,
 				AC3F9F1821882CF200679F1F /* LaunchScreen.storyboard */,
 				AC3F9F1B21882CF200679F1F /* Info.plist */,
@@ -346,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC3F9F1221882CF200679F1F /* RIORootViewController.m in Sources */,
 				AC3F9F1D21882CF300679F1F /* main.m in Sources */,
 				ACA03C6D2189A11B00BAA882 /* RIOCharacterSectionController.m in Sources */,
 				ACA03C6A21899F0000BAA882 /* RIOCharacterViewModel.m in Sources */,
