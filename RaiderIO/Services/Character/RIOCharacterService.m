@@ -29,16 +29,31 @@ static NSString * const baseURLString = @"https://raider.io/api/v1/characters/pr
                             name:(NSString *)name
                       completion:(RIOCharacterServiceFetchCompletionBlock)completion {
     NSURLRequest * const request = characterRequest(realm, region, name);
-    NSURLSessionDataTask * const task = [_urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error) {
-            completion(nil);
-        } else {
-            NSError *jsonError;
-            NSDictionary<NSString *, id> * const jsonDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-            completion(!jsonError ? characterFromDictionary(jsonDict) : nil);
-        }
-    }];
-    [task resume];
+    [[_urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        RIOCharacter * const character = (error
+                                          ? nil
+                                          : characterFromDictionary([NSJSONSerialization JSONObjectWithData:data
+                                                                                                    options:NSJSONReadingAllowFragments
+                                                                                                      error:nil]));
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Loaded details for %@-%@", name, realm);
+            completion(character);
+        });
+    }] resume];
+}
+
+- (void)fetchThumbnailForCharacter:(RIOCharacter *)character
+                        completion:(RIOCharacterServiceThumbnailCompletionBlock)completion {
+    [[_urlSession dataTaskWithURL:character.thumbnailURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        UIImage * const image = (data
+                                 ? [UIImage imageWithData:data]
+                                 : nil);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Loaded thumbnail for %@-%@", character.name, character.realm);
+            completion(image);
+        });
+    }] resume];
 }
 
 #pragma mark - Private

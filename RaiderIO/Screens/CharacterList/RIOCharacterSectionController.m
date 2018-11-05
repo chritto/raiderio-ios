@@ -13,6 +13,7 @@
 #import "RIOCharacterService.h"
 #import "RIOCharacter.h"
 #import "RIOGuild.h"
+#import "RIOCharacterViewController.h"
 
 @implementation RIOCharacterSectionController {
     RIOCharacterService *_characterService;
@@ -21,7 +22,6 @@
 - (instancetype)init {
     if (self = [super init]) {
         _characterService = [RIOCharacterService new];
-        [self _loadUpCharacter];
     }
     return self;
 }
@@ -38,16 +38,11 @@
     return cell;
 }
 
-#pragma mark - Private
-
-- (void)_loadUpCharacter {
-    [_characterService fetchCharacterWithRegion:@"us" realm:@"Ner'zhul" name:@"Sevv" completion:^(RIOCharacter * _Nullable character) {
-        NSLog(@"Fetched my character:");
-        NSLog(@"%@", [character description]);
+- (void)didSelectItemAtIndex:(NSInteger)index {
+    [_characterService fetchCharacterWithRegion:self.object.region realm:self.object.realm name:self.object.name completion:^(RIOCharacter * _Nullable character) {
+        RIOCharacterViewController * const characterViewController = [[RIOCharacterViewController alloc] initWithCharacter:character];
+        [self.viewController.navigationController pushViewController:characterViewController animated:YES];
     }];
 }
 
 @end
-
-// https://raider.io/api/v1/characters/profile?region=us&realm=Ner'zhul&name=Sevv&fields=mythic_plus_best_runs%3Aall
-// https://raider.io/api/v1/characters/profile?region=us?name=Sevv?realm=Ner'zhul?fields=mythic_plus_best_runs:all

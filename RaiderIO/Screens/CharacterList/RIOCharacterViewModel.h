@@ -8,6 +8,7 @@
 
 @interface RIOCharacterViewModel : NSObject <IGListDiffable, NSCopying>
 
+@property (nonatomic, readonly, copy) NSString *region;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *realm;
 
@@ -15,7 +16,7 @@
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithName:(NSString *)name realm:(NSString *)realm NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithRegion:(NSString *)region name:(NSString *)name realm:(NSString *)realm NS_DESIGNATED_INITIALIZER;
 
 @end
 

@@ -6,13 +6,14 @@
 //  Copyright © 2018 Chris McGrath. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class RIOCharacter;
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^RIOCharacterServiceFetchCompletionBlock)(RIOCharacter * _Nullable character);
+typedef void (^RIOCharacterServiceThumbnailCompletionBlock)(UIImage * _Nullable image);
 
 @interface RIOCharacterService : NSObject
 
@@ -20,6 +21,9 @@ typedef void (^RIOCharacterServiceFetchCompletionBlock)(RIOCharacter * _Nullable
                            realm:(NSString *)realm
                             name:(NSString *)name
                       completion:(RIOCharacterServiceFetchCompletionBlock)completion;
+
+- (void)fetchThumbnailForCharacter:(RIOCharacter *)character
+                        completion:(RIOCharacterServiceThumbnailCompletionBlock)completion;
 
 @end
 

@@ -104,7 +104,7 @@
 #pragma mark - IGListAdapterDataSource
 
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
-    return @[ [[RIOCharacterViewModel alloc] initWithName:@"Sevv" realm:@"Ner'zhul"] ];
+    return @[ [[RIOCharacterViewModel alloc] initWithRegion:@"us" name:@"Sevv" realm:@"Ner'zhul"] ];
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {

@@ -11,9 +11,10 @@
 
 @implementation RIOCharacterViewModel
 
-- (instancetype)initWithName:(NSString *)name realm:(NSString *)realm
+- (instancetype)initWithRegion:(NSString *)region name:(NSString *)name realm:(NSString *)realm
 {
   if ((self = [super init])) {
+    _region = [region copy];
     _name = [name copy];
     _realm = [realm copy];
   }
@@ -28,7 +29,7 @@
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%@ - \n\t name: %@; \n\t realm: %@; \n", [super description], _name, _realm];
+  return [NSString stringWithFormat:@"%@ - \n\t region: %@; \n\t name: %@; \n\t realm: %@; \n", [super description], _region, _name, _realm];
 }
 
 - (id<NSObject>)diffIdentifier
@@ -38,9 +39,9 @@
 
 - (NSUInteger)hash
 {
-  NSUInteger subhashes[] = {[_name hash], [_realm hash]};
+  NSUInteger subhashes[] = {[_region hash], [_name hash], [_realm hash]};
   NSUInteger result = subhashes[0];
-  for (int ii = 1; ii < 2; ++ii) {
+  for (int ii = 1; ii < 3; ++ii) {
     unsigned long long base = (((unsigned long long)result) << 32 | subhashes[ii]);
     base = (~base) + (base << 18);
     base ^= (base >> 31);
@@ -61,6 +62,7 @@
     return NO;
   }
   return
+    (_region == object->_region ? YES : [_region isEqual:object->_region]) &&
     (_name == object->_name ? YES : [_name isEqual:object->_name]) &&
     (_realm == object->_realm ? YES : [_realm isEqual:object->_realm]);
 }
