@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RIOCharacterViewModel.h"
+#import "RIOCharacterPreviewViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RIOCharacterCell : UICollectionViewCell
+@interface RIOCharacterPreviewCell : UICollectionViewCell
 
-- (void)configureWithViewModel:(RIOCharacterViewModel *)viewModel;
+- (void)configureWithViewModel:(RIOCharacterPreviewViewModel *)viewModel;
 
 @end
 

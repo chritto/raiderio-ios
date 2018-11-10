@@ -6,9 +6,9 @@
 //  Copyright © 2018 Chris McGrath. All rights reserved.
 //
 
-#import "RIOCharacterViewModel+Layout.h"
+#import "RIOCharacterPreviewViewModel+Layout.h"
 
-@implementation RIOCharacterViewModel (Layout)
+@implementation RIOCharacterPreviewViewModel (Layout)
 
 - (CGSize)sizeForConstrainingSize:(CGSize)constrainingSize {
     const CGRect nameFrame = [self nameFrameForConstrainingSize:constrainingSize];

@@ -1,15 +1,15 @@
 /**
  * This file is generated using the remodel generation script.
- * The name of the input file is RIOCharacterViewModel.value
+ * The name of the input file is RIOCharacterPreviewViewModel.value
  */
 
 #if  ! __has_feature(objc_arc)
 #error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
-#import "RIOCharacterViewModel.h"
+#import "RIOCharacterPreviewViewModel.h"
 
-@implementation RIOCharacterViewModel
+@implementation RIOCharacterPreviewViewModel
 
 - (instancetype)initWithRegion:(NSString *)region name:(NSString *)name realm:(NSString *)realm
 {
@@ -54,7 +54,7 @@
   return result;
 }
 
-- (BOOL)isEqual:(RIOCharacterViewModel *)object
+- (BOOL)isEqual:(RIOCharacterPreviewViewModel *)object
 {
   if (self == object) {
     return YES;

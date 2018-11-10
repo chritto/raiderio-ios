@@ -10,8 +10,8 @@
 
 #import <IGListKit/IGListKit.h>
 
-#import "RIOCharacterSectionController.h"
-#import "RIOCharacterViewModel.h"
+#import "RIOCharacterPreviewSectionController.h"
+#import "RIOCharacterPreviewViewModel.h"
 
 @interface RIOCharacterListViewController () <IGListAdapterDataSource>
 
@@ -104,12 +104,12 @@
 #pragma mark - IGListAdapterDataSource
 
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
-    return @[ [[RIOCharacterViewModel alloc] initWithRegion:@"us" name:@"Sevv" realm:@"Ner'zhul"] ];
+    return @[ [[RIOCharacterPreviewViewModel alloc] initWithRegion:@"us" name:@"Sevv" realm:@"Ner'zhul"] ];
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
-    if ([object isKindOfClass:[RIOCharacterViewModel class]]) {
-        return [RIOCharacterSectionController new];
+    if ([object isKindOfClass:[RIOCharacterPreviewViewModel class]]) {
+        return [RIOCharacterPreviewSectionController new];
     } else {
         NSAssert(false, @"Unable to find a matching section controller for %@", object);
         return nil;

@@ -6,13 +6,13 @@
 //  Copyright © 2018 Chris McGrath. All rights reserved.
 //
 
-#import "RIOCharacterCell.h"
+#import "RIOCharacterPreviewCell.h"
 
-#import "RIOCharacterViewModel+Layout.h"
+#import "RIOCharacterPreviewViewModel+Layout.h"
 
-@implementation RIOCharacterCell {
+@implementation RIOCharacterPreviewCell {
     UILabel *_nameLabel;
-    RIOCharacterViewModel *_viewModel;
+    RIOCharacterPreviewViewModel *_viewModel;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -24,7 +24,7 @@
     return self;
 }
 
-- (void)configureWithViewModel:(RIOCharacterViewModel *)viewModel {
+- (void)configureWithViewModel:(RIOCharacterPreviewViewModel *)viewModel {
     _nameLabel.text = [NSString stringWithFormat:@"%@-%@", viewModel.name, viewModel.realm];
     _viewModel = viewModel;
 }

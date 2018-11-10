@@ -8,11 +8,11 @@
 
 #import <IGListKit/IGListKit.h>
 
-#import "RIOCharacterViewModel.h"
+#import "RIOCharacterPreviewViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RIOCharacterSectionController : IGListGenericSectionController<RIOCharacterViewModel *>
+@interface RIOCharacterPreviewSectionController : IGListGenericSectionController<RIOCharacterPreviewViewModel *>
 
 @end
 

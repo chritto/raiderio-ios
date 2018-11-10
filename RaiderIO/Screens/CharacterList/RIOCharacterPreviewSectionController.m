@@ -6,16 +6,16 @@
 //  Copyright © 2018 Chris McGrath. All rights reserved.
 //
 
-#import "RIOCharacterSectionController.h"
+#import "RIOCharacterPreviewSectionController.h"
 
-#import "RIOCharacterCell.h"
-#import "RIOCharacterViewModel+Layout.h"
+#import "RIOCharacterPreviewCell.h"
+#import "RIOCharacterPreviewViewModel+Layout.h"
 #import "RIOCharacterService.h"
 #import "RIOCharacter.h"
 #import "RIOGuild.h"
 #import "RIOCharacterViewController.h"
 
-@implementation RIOCharacterSectionController {
+@implementation RIOCharacterPreviewSectionController {
     RIOCharacterService *_characterService;
 }
 
@@ -31,9 +31,9 @@
 }
 
 - (__kindof UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
-    RIOCharacterCell * const cell = [self.collectionContext dequeueReusableCellOfClass:[RIOCharacterCell class]
-                                                                  forSectionController:self
-                                                                               atIndex:index];
+    RIOCharacterPreviewCell * const cell = [self.collectionContext dequeueReusableCellOfClass:[RIOCharacterPreviewCell class]
+                                                                         forSectionController:self
+                                                                                      atIndex:index];
     [cell configureWithViewModel:self.object];
     return cell;
 }

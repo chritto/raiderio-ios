@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RIOCharacterViewModel.h"
+#import "RIOCharacterPreviewViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RIOCharacterViewModel (Layout)
+@interface RIOCharacterPreviewViewModel (Layout)
 
 - (CGSize)sizeForConstrainingSize:(CGSize)constrainingSize;
 

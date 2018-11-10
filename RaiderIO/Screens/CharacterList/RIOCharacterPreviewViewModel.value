@@ -1,4 +1,4 @@
-RIOCharacterViewModel includes(IGListDiffable) {
+RIOCharacterPreviewViewModel includes(IGListDiffable) {
     NSString *region
     NSString *name
     NSString *realm
