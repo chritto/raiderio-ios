@@ -22,8 +22,8 @@ typedef void (^RIOCharacterServiceThumbnailCompletionBlock)(UIImage * _Nullable 
                             name:(NSString *)name
                       completion:(RIOCharacterServiceFetchCompletionBlock)completion;
 
-- (void)fetchThumbnailForCharacter:(RIOCharacter *)character
-                        completion:(RIOCharacterServiceThumbnailCompletionBlock)completion;
+- (void)fetchThumbnailWithURL:(NSURL *)url
+                   completion:(RIOCharacterServiceThumbnailCompletionBlock)completion;
 
 @end
 

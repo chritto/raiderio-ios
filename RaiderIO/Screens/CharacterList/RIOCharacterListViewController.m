@@ -10,20 +10,27 @@
 
 #import <IGListKit/IGListKit.h>
 
+#import "RIOCharacterCache.h"
+#import "RIOCharacterID.h"
+#import "RIOCharacter.h"
 #import "RIOCharacterPreviewSectionController.h"
 #import "RIOCharacterPreviewViewModel.h"
+#import "RIOCollections.h"
 
-@interface RIOCharacterListViewController () <IGListAdapterDataSource>
+@interface RIOCharacterListViewController () <IGListAdapterDataSource, RIOCharacterCacheListener>
 
 @end
 
 @implementation RIOCharacterListViewController {
     UICollectionView *_collectionView;
     IGListAdapter *_listAdapter;
+    RIOCharacterCache *_characterCache;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
+        _characterCache = [RIOCharacterCache new];
+        [_characterCache addListener:self];
     }
     return self;
 }
@@ -104,7 +111,22 @@
 #pragma mark - IGListAdapterDataSource
 
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
-    return @[ [[RIOCharacterPreviewViewModel alloc] initWithRegion:@"us" name:@"Sevv" realm:@"Ner'zhul"] ];
+    return [_characterCache.favoriteCharacterIdentifiers rio_map:^RIOCharacterPreviewViewModel *(RIOCharacterID *characterID) {
+        RIOCharacter * const character = [self->_characterCache characterWithID:characterID];
+        if (character != nil) {
+            return [[RIOCharacterPreviewViewModel alloc] initWithRegion:character.region
+                                                                   name:character.name
+                                                                  realm:character.realm
+                                                                  guild:character.guild.name
+                                                           thumbnailURL:character.thumbnailURL];
+        } else {
+            return [[RIOCharacterPreviewViewModel alloc] initWithRegion:characterID.region
+                                                                   name:characterID.name
+                                                                  realm:characterID.realm
+                                                                  guild:@"Loading..."
+                                                           thumbnailURL:nil];
+        }
+    }];
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
@@ -118,6 +140,12 @@
 
 - (nullable UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {
     return nil;
+}
+
+#pragma mark - RIOCharacterCacheListener
+
+- (void)characterCacheDidUpdate {
+    [_listAdapter performUpdatesAnimated:YES completion:nil];
 }
 
 @end

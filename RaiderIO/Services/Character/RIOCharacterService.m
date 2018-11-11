@@ -43,14 +43,13 @@ static NSString * const baseURLString = @"https://raider.io/api/v1/characters/pr
     }] resume];
 }
 
-- (void)fetchThumbnailForCharacter:(RIOCharacter *)character
-                        completion:(RIOCharacterServiceThumbnailCompletionBlock)completion {
-    [[_urlSession dataTaskWithURL:character.thumbnailURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+- (void)fetchThumbnailWithURL:(NSURL *)url
+                   completion:(RIOCharacterServiceThumbnailCompletionBlock)completion {
+    [[_urlSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         UIImage * const image = (data
                                  ? [UIImage imageWithData:data]
                                  : nil);
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Loaded thumbnail for %@-%@", character.name, character.realm);
             completion(image);
         });
     }] resume];
