@@ -11,11 +11,10 @@
 
 @implementation RIOCharacterPreviewViewModel
 
-- (instancetype)initWithCharacterID:(RIOCharacterID *)characterID realmDescription:(NSString *)realmDescription loading:(BOOL)loading guild:(nullable NSString *)guild thumbnailURL:(nullable NSURL *)thumbnailURL score:(nullable NSString *)score
+- (instancetype)initWithCharacterID:(RIOCharacterID *)characterID loading:(BOOL)loading guild:(nullable NSString *)guild thumbnailURL:(nullable NSURL *)thumbnailURL score:(nullable NSString *)score
 {
   if ((self = [super init])) {
     _characterID = [characterID copy];
-    _realmDescription = [realmDescription copy];
     _loading = loading;
     _guild = [guild copy];
     _thumbnailURL = [thumbnailURL copy];
@@ -32,7 +31,7 @@
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%@ - \n\t characterID: %@; \n\t realmDescription: %@; \n\t loading: %@; \n\t guild: %@; \n\t thumbnailURL: %@; \n\t score: %@; \n", [super description], _characterID, _realmDescription, _loading ? @"YES" : @"NO", _guild, _thumbnailURL, _score];
+  return [NSString stringWithFormat:@"%@ - \n\t characterID: %@; \n\t loading: %@; \n\t guild: %@; \n\t thumbnailURL: %@; \n\t score: %@; \n", [super description], _characterID, _loading ? @"YES" : @"NO", _guild, _thumbnailURL, _score];
 }
 
 - (id<NSObject>)diffIdentifier
@@ -42,9 +41,9 @@
 
 - (NSUInteger)hash
 {
-  NSUInteger subhashes[] = {[_characterID hash], [_realmDescription hash], (NSUInteger)_loading, [_guild hash], [_thumbnailURL hash], [_score hash]};
+  NSUInteger subhashes[] = {[_characterID hash], (NSUInteger)_loading, [_guild hash], [_thumbnailURL hash], [_score hash]};
   NSUInteger result = subhashes[0];
-  for (int ii = 1; ii < 6; ++ii) {
+  for (int ii = 1; ii < 5; ++ii) {
     unsigned long long base = (((unsigned long long)result) << 32 | subhashes[ii]);
     base = (~base) + (base << 18);
     base ^= (base >> 31);
@@ -67,7 +66,6 @@
   return
     _loading == object->_loading &&
     (_characterID == object->_characterID ? YES : [_characterID isEqual:object->_characterID]) &&
-    (_realmDescription == object->_realmDescription ? YES : [_realmDescription isEqual:object->_realmDescription]) &&
     (_guild == object->_guild ? YES : [_guild isEqual:object->_guild]) &&
     (_thumbnailURL == object->_thumbnailURL ? YES : [_thumbnailURL isEqual:object->_thumbnailURL]) &&
     (_score == object->_score ? YES : [_score isEqual:object->_score]);

@@ -112,18 +112,15 @@
 
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
     return [_characterCache.favoriteCharacterIdentifiers rio_map:^RIOCharacterPreviewViewModel *(RIOCharacterID *characterID) {
-        NSString * const realmDescription = [NSString stringWithFormat:@"%@ (%@)", characterID.realm, characterID.region];
         RIOCharacter * const character = [self->_characterCache characterWithID:characterID];
         if (character != nil) {
             return [[RIOCharacterPreviewViewModel alloc] initWithCharacterID:characterID
-                                                            realmDescription:realmDescription
                                                                      loading:NO
                                                                        guild:character.guild.name
                                                                 thumbnailURL:character.thumbnailURL
                                                                        score:[NSString stringWithFormat:@"%@", @(character.mythicPlusScores.all)]];
         } else {
             return [[RIOCharacterPreviewViewModel alloc] initWithCharacterID:characterID
-                                                            realmDescription:realmDescription
                                                                      loading:YES
                                                                        guild:@"Loading..."
                                                                 thumbnailURL:nil

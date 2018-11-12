@@ -10,7 +10,6 @@
 @interface RIOCharacterPreviewViewModel : NSObject <IGListDiffable, NSCopying>
 
 @property (nonatomic, readonly, copy) RIOCharacterID *characterID;
-@property (nonatomic, readonly, copy) NSString *realmDescription;
 @property (nonatomic, readonly) BOOL loading;
 @property (nonatomic, readonly, copy, nullable) NSString *guild;
 @property (nonatomic, readonly, copy, nullable) NSURL *thumbnailURL;
@@ -20,7 +19,7 @@
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithCharacterID:(RIOCharacterID *)characterID realmDescription:(NSString *)realmDescription loading:(BOOL)loading guild:(nullable NSString *)guild thumbnailURL:(nullable NSURL *)thumbnailURL score:(nullable NSString *)score NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithCharacterID:(RIOCharacterID *)characterID loading:(BOOL)loading guild:(nullable NSString *)guild thumbnailURL:(nullable NSURL *)thumbnailURL score:(nullable NSString *)score NS_DESIGNATED_INITIALIZER;
 
 @end
 

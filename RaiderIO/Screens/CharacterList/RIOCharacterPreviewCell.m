@@ -48,6 +48,7 @@
         [self.contentView addSubview:_thumbnailView];
 
         _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _activityIndicatorView.hidesWhenStopped = YES;
         [self.contentView addSubview:_activityIndicatorView];
     }
     return self;
@@ -56,12 +57,17 @@
 - (void)configureWithViewModel:(RIOCharacterPreviewViewModel *)viewModel {
     _nameLabel.text = viewModel.characterID.name;
     _guildLabel.text = viewModel.guild;
-    _realmLabel.text = viewModel.realmDescription;
+    _realmLabel.text = viewModel.characterID.realm;
     _scoreLabel.text = viewModel.score;
     [_characterService fetchThumbnailWithURL:viewModel.thumbnailURL completion:^(UIImage * _Nullable image) {
         self->_thumbnailView.image = image;
     }];
-    _activityIndicatorView.hidden = !viewModel.loading;
+
+    if (viewModel.loading) {
+        [_activityIndicatorView startAnimating];
+    } else {
+        [_activityIndicatorView stopAnimating];
+    }
 
     _viewModel = viewModel;
     [self setNeedsLayout];

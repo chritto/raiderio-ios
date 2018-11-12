@@ -31,7 +31,7 @@
 }
 
 - (CGSize)realmSize {
-    return sizeForText(self.realmDescription, self.font);
+    return sizeForText(self.characterID.realm, self.font);
 }
 
 - (CGSize)scoreSize {
