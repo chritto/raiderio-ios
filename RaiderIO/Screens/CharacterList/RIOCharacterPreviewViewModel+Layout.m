@@ -11,46 +11,52 @@
 @implementation RIOCharacterPreviewViewModel (Layout)
 
 - (CGSize)sizeForConstrainingSize:(CGSize)constrainingSize {
-    const CGRect nameFrame = [self nameFrameForConstrainingSize:constrainingSize];
-    const CGRect guildFrame = [self guildFrameForConstrainingSize:constrainingSize];
-    const CGRect realmFrame = [self realmFrameForConstrainingSize:constrainingSize];
+    const CGSize nameSize = [self nameSize];
+    const CGSize guildSize = [self guildSize];
+    const CGSize realmSize = [self realmSize];
     return CGSizeMake(constrainingSize.width,
-                      (nameFrame.size.height
-                       + guildFrame.size.height
-                       + realmFrame.size.height
-                       + nameInsets().top
-                       + nameInsets().bottom));
+                      (nameSize.height
+                       + guildSize.height
+                       + realmSize.height
+                       + self.insets.top
+                       + self.insets.bottom));
 }
 
-- (CGRect)nameFrameForConstrainingSize:(CGSize)constrainingSize {
-    const CGFloat textHeight = heightForText(self.name, constrainingSize);
-    return CGRectMake(nameInsets().left,
-                      nameInsets().top,
-                      constrainingSize.width - nameInsets().left - nameInsets().right,
-                      textHeight);
+- (CGSize)nameSize {
+    return sizeForText(self.characterID.name, self.font);
 }
 
-- (CGRect)guildFrameForConstrainingSize:(CGSize)constrainingSize {
-    const CGFloat textHeight = heightForText(self.guild, constrainingSize);
-    return CGRectMake(0, 0, constrainingSize.width, textHeight);
+- (CGSize)guildSize {
+    return sizeForText(self.guild, self.font);
 }
 
-- (CGRect)realmFrameForConstrainingSize:(CGSize)constrainingSize {
-    const CGFloat textHeight = heightForText(self.realm, constrainingSize);
-    return CGRectMake(0, 0, constrainingSize.width, textHeight);
+- (CGSize)realmSize {
+    return sizeForText(self.realmDescription, self.font);
+}
+
+- (CGSize)scoreSize {
+    return sizeForText(self.score, self.font);
+}
+
+- (UIEdgeInsets)insets {
+    return UIEdgeInsetsMake(8, 8, 8, 8);
+}
+
+- (CGFloat)horizontalPadding {
+    return 8;
+}
+
+- (UIFont *)font {
+    return [UIFont systemFontOfSize:17];
 }
 
 #pragma mark - private
 
-static UIEdgeInsets nameInsets() {
-    return UIEdgeInsetsMake(8, 8, 8, 8);
-}
-
-static CGFloat heightForText(NSString *text, CGSize constrainingSize) {
-    return [text boundingRectWithSize:constrainingSize
+static CGSize sizeForText(NSString *text, UIFont *font) {
+    return [text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
                               options:NSStringDrawingUsesLineFragmentOrigin
-                           attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:[UIFont systemFontSize]]}
-                              context:nil].size.height;
+                           attributes:@{NSFontAttributeName: font}
+                              context:nil].size;
 }
 
 @end

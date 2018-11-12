@@ -1,0 +1,6 @@
+RIOMythicPlusScores {
+    NSInteger all
+    NSInteger dps
+    NSInteger healer
+    NSInteger tank
+}

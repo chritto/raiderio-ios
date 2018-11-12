@@ -13,4 +13,5 @@ RIOCharacter {
     NSString *realm
     NSURL *profileURL
     RIOGuild *guild
+    RIOMythicPlusScores *mythicPlusScores
 }

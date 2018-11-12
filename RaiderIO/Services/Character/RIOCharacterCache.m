@@ -65,14 +65,14 @@
     }
 
     [_fetching addObject:characterID];
-    [_service fetchCharacterWithRegion:characterID.region realm:characterID.realm name:characterID.name completion:^(RIOCharacter * _Nullable character) {
+    [_service fetchCharacterWithID:characterID completion:^(RIOCharacter * _Nullable character) {
         self->_cache[characterID] = character;
         [self->_fetching removeObject:characterID];
-        [self _informListenersOfCacheUpdate];
+        [self _notifyListenersOfCacheUpdate];
     }];
 }
 
-- (void)_informListenersOfCacheUpdate {
+- (void)_notifyListenersOfCacheUpdate {
     NSArray<id<RIOCharacterCacheListener>> * const listeners = [_listeners allObjects];
     for (id<RIOCharacterCacheListener> listener in listeners) {
         [listener characterCacheDidUpdate];

@@ -112,26 +112,29 @@
 
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
     return [_characterCache.favoriteCharacterIdentifiers rio_map:^RIOCharacterPreviewViewModel *(RIOCharacterID *characterID) {
+        NSString * const realmDescription = [NSString stringWithFormat:@"%@ (%@)", characterID.realm, characterID.region];
         RIOCharacter * const character = [self->_characterCache characterWithID:characterID];
         if (character != nil) {
-            return [[RIOCharacterPreviewViewModel alloc] initWithRegion:character.region
-                                                                   name:character.name
-                                                                  realm:character.realm
-                                                                  guild:character.guild.name
-                                                           thumbnailURL:character.thumbnailURL];
+            return [[RIOCharacterPreviewViewModel alloc] initWithCharacterID:characterID
+                                                            realmDescription:realmDescription
+                                                                     loading:NO
+                                                                       guild:character.guild.name
+                                                                thumbnailURL:character.thumbnailURL
+                                                                       score:[NSString stringWithFormat:@"%@", @(character.mythicPlusScores.all)]];
         } else {
-            return [[RIOCharacterPreviewViewModel alloc] initWithRegion:characterID.region
-                                                                   name:characterID.name
-                                                                  realm:characterID.realm
-                                                                  guild:@"Loading..."
-                                                           thumbnailURL:nil];
+            return [[RIOCharacterPreviewViewModel alloc] initWithCharacterID:characterID
+                                                            realmDescription:realmDescription
+                                                                     loading:YES
+                                                                       guild:@"Loading..."
+                                                                thumbnailURL:nil
+                                                                       score:nil];
         }
     }];
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
     if ([object isKindOfClass:[RIOCharacterPreviewViewModel class]]) {
-        return [RIOCharacterPreviewSectionController new];
+        return [[RIOCharacterPreviewSectionController alloc] initWithCharacterCache:_characterCache];
     } else {
         NSAssert(false, @"Unable to find a matching section controller for %@", object);
         return nil;

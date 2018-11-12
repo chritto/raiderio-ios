@@ -25,6 +25,8 @@
 		ACCAEF4A21979270002F76C4 /* RIOCharacterID.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF4821979270002F76C4 /* RIOCharacterID.m */; };
 		ACCAEF4D219792A6002F76C4 /* RIOCharacterCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF4C219792A6002F76C4 /* RIOCharacterCache.m */; };
 		ACCAEF5021979357002F76C4 /* RIOCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF4F21979357002F76C4 /* RIOCollections.m */; };
+		ACCAEF52219908F2002F76C4 /* RIOMythicPlusScores.value in Resources */ = {isa = PBXBuildFile; fileRef = ACCAEF51219908F2002F76C4 /* RIOMythicPlusScores.value */; };
+		ACCAEF5521990925002F76C4 /* RIOMythicPlusScores.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF5421990925002F76C4 /* RIOMythicPlusScores.m */; };
 		ACF60E8B2189991400E30606 /* RIOCharacterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */; };
 		F63EA491F1983092C9425DB9 /* libPods-RaiderIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A237742C56B459CE348C09 /* libPods-RaiderIO.a */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,9 @@
 		ACCAEF4C219792A6002F76C4 /* RIOCharacterCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterCache.m; sourceTree = "<group>"; };
 		ACCAEF4E21979357002F76C4 /* RIOCollections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCollections.h; sourceTree = "<group>"; };
 		ACCAEF4F21979357002F76C4 /* RIOCollections.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCollections.m; sourceTree = "<group>"; };
+		ACCAEF51219908F2002F76C4 /* RIOMythicPlusScores.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOMythicPlusScores.value; sourceTree = "<group>"; };
+		ACCAEF5321990925002F76C4 /* RIOMythicPlusScores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOMythicPlusScores.h; sourceTree = "<group>"; };
+		ACCAEF5421990925002F76C4 /* RIOMythicPlusScores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOMythicPlusScores.m; sourceTree = "<group>"; };
 		ACF60E892189991400E30606 /* RIOCharacterListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterListViewController.h; sourceTree = "<group>"; };
 		ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterListViewController.m; sourceTree = "<group>"; };
 		ACF60E8D21899A0100E30606 /* RIOMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOMacros.h; sourceTree = "<group>"; };
@@ -126,6 +131,9 @@
 				ACCAEF4621979249002F76C4 /* RIOCharacterID.value */,
 				ACCAEF4921979270002F76C4 /* RIOCharacterID.h */,
 				ACCAEF4821979270002F76C4 /* RIOCharacterID.m */,
+				ACCAEF51219908F2002F76C4 /* RIOMythicPlusScores.value */,
+				ACCAEF5321990925002F76C4 /* RIOMythicPlusScores.h */,
+				ACCAEF5421990925002F76C4 /* RIOMythicPlusScores.m */,
 				AC2EF19B218F589000C92D37 /* RIOGuild.h */,
 				AC2EF19C218F589000C92D37 /* RIOGuild.m */,
 				ACCAEF4B219792A6002F76C4 /* RIOCharacterCache.h */,
@@ -329,6 +337,7 @@
 				AC3F9F1A21882CF200679F1F /* LaunchScreen.storyboard in Resources */,
 				AC3F9F1721882CF200679F1F /* Assets.xcassets in Resources */,
 				ACCAEF4721979249002F76C4 /* RIOCharacterID.value in Resources */,
+				ACCAEF52219908F2002F76C4 /* RIOMythicPlusScores.value in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +410,7 @@
 				ACA03C6A21899F0000BAA882 /* RIOCharacterPreviewViewModel.m in Sources */,
 				ACF60E8B2189991400E30606 /* RIOCharacterListViewController.m in Sources */,
 				ACA03C732189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.m in Sources */,
+				ACCAEF5521990925002F76C4 /* RIOMythicPlusScores.m in Sources */,
 				ACA03C702189A21700BAA882 /* RIOCharacterPreviewCell.m in Sources */,
 				AC3F9F0F21882CF200679F1F /* AppDelegate.m in Sources */,
 				AC2EF19F218F589100C92D37 /* RIOGuild.m in Sources */,

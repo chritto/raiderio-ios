@@ -1,7 +1,8 @@
 RIOCharacterPreviewViewModel includes(IGListDiffable) {
-    NSString *region
-    NSString *name
-    NSString *realm
+    RIOCharacterID *characterID
+    NSString *realmDescription
+    BOOL loading
     %nullable NSString *guild
     %nullable NSURL *thumbnailURL
+    %nullable NSString *score
 }

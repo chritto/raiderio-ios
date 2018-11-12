@@ -8,20 +8,20 @@
 
 #import "RIOCharacterPreviewSectionController.h"
 
+#import "RIOCharacterCache.h"
 #import "RIOCharacterPreviewCell.h"
 #import "RIOCharacterPreviewViewModel+Layout.h"
-#import "RIOCharacterService.h"
 #import "RIOCharacter.h"
 #import "RIOGuild.h"
 #import "RIOCharacterViewController.h"
 
 @implementation RIOCharacterPreviewSectionController {
-    RIOCharacterService *_characterService;
+    RIOCharacterCache *_characterCache;
 }
 
-- (instancetype)init {
+- (instancetype)initWithCharacterCache:(RIOCharacterCache *)characterCache {
     if (self = [super init]) {
-        _characterService = [RIOCharacterService new];
+        _characterCache = characterCache;
     }
     return self;
 }
@@ -39,10 +39,11 @@
 }
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
-    [_characterService fetchCharacterWithRegion:self.object.region realm:self.object.realm name:self.object.name completion:^(RIOCharacter * _Nullable character) {
+    RIOCharacter * const character = [_characterCache characterWithID:self.object.characterID];
+    if (character != nil) {
         RIOCharacterViewController * const characterViewController = [[RIOCharacterViewController alloc] initWithCharacter:character];
         [self.viewController.navigationController pushViewController:characterViewController animated:YES];
-    }];
+    }
 }
 
 @end

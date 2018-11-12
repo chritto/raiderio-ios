@@ -9,10 +9,17 @@
 #import <IGListKit/IGListKit.h>
 
 #import "RIOCharacterPreviewViewModel.h"
+#import "RIOMacros.h"
+
+@class RIOCharacterCache;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RIOCharacterPreviewSectionController : IGListGenericSectionController<RIOCharacterPreviewViewModel *>
+
+- (instancetype)initWithCharacterCache:(RIOCharacterCache *)characterCache;
+
+RIO_INIT_UNAVAILABLE
 
 @end
 

@@ -16,7 +16,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGSize)sizeForConstrainingSize:(CGSize)constrainingSize;
 
-- (CGRect)nameFrameForConstrainingSize:(CGSize)constrainingSize;
+- (CGSize)nameSize;
+
+- (CGSize)guildSize;
+
+- (CGSize)realmSize;
+
+- (CGSize)scoreSize;
+
+- (UIEdgeInsets)insets;
+
+- (CGFloat)horizontalPadding;
+
+- (UIFont *)font;
 
 @end
 

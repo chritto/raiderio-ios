@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class RIOCharacter;
+@class RIOCharacterID;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,10 +18,8 @@ typedef void (^RIOCharacterServiceThumbnailCompletionBlock)(UIImage * _Nullable 
 
 @interface RIOCharacterService : NSObject
 
-- (void)fetchCharacterWithRegion:(NSString *)region
-                           realm:(NSString *)realm
-                            name:(NSString *)name
-                      completion:(RIOCharacterServiceFetchCompletionBlock)completion;
+- (void)fetchCharacterWithID:(RIOCharacterID *)characterID
+                  completion:(RIOCharacterServiceFetchCompletionBlock)completion;
 
 - (void)fetchThumbnailWithURL:(NSURL *)url
                    completion:(RIOCharacterServiceThumbnailCompletionBlock)completion;

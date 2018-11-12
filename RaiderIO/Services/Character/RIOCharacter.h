@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RIOGuild.h"
+#import "RIOMythicPlusScores.h"
 
 @interface RIOCharacter : NSObject <NSCopying>
 
@@ -22,12 +23,13 @@
 @property (nonatomic, readonly, copy) NSString *realm;
 @property (nonatomic, readonly, copy) NSURL *profileURL;
 @property (nonatomic, readonly, copy) RIOGuild *guild;
+@property (nonatomic, readonly, copy) RIOMythicPlusScores *mythicPlusScores;
 
 + (instancetype)new NS_UNAVAILABLE;
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithName:(NSString *)name race:(NSString *)race characterClass:(NSString *)characterClass activeSpecName:(NSString *)activeSpecName activeSpecRole:(NSString *)activeSpecRole gender:(NSString *)gender faction:(NSString *)faction achievementPoints:(NSInteger)achievementPoints honorableKills:(NSInteger)honorableKills thumbnailURL:(NSURL *)thumbnailURL region:(NSString *)region realm:(NSString *)realm profileURL:(NSURL *)profileURL guild:(RIOGuild *)guild NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithName:(NSString *)name race:(NSString *)race characterClass:(NSString *)characterClass activeSpecName:(NSString *)activeSpecName activeSpecRole:(NSString *)activeSpecRole gender:(NSString *)gender faction:(NSString *)faction achievementPoints:(NSInteger)achievementPoints honorableKills:(NSInteger)honorableKills thumbnailURL:(NSURL *)thumbnailURL region:(NSString *)region realm:(NSString *)realm profileURL:(NSURL *)profileURL guild:(RIOGuild *)guild mythicPlusScores:(RIOMythicPlusScores *)mythicPlusScores NS_DESIGNATED_INITIALIZER;
 
 @end
 

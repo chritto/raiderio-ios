@@ -9,7 +9,9 @@
 #import "RIOCharacterService.h"
 
 #import "RIOCharacter.h"
+#import "RIOCharacterID.h"
 #import "RIOGuild.h"
+#import "RIOMythicPlusScores.h"
 
 static NSString * const baseURLString = @"https://raider.io/api/v1/characters/profile";
 
@@ -24,11 +26,9 @@ static NSString * const baseURLString = @"https://raider.io/api/v1/characters/pr
     return self;
 }
 
-- (void)fetchCharacterWithRegion:(NSString *)region
-                           realm:(NSString *)realm
-                            name:(NSString *)name
-                      completion:(RIOCharacterServiceFetchCompletionBlock)completion {
-    NSURLRequest * const request = characterRequest(realm, region, name);
+- (void)fetchCharacterWithID:(RIOCharacterID *)characterID
+                  completion:(RIOCharacterServiceFetchCompletionBlock)completion {
+    NSURLRequest * const request = characterRequest(characterID);
     [[_urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         RIOCharacter * const character = (error
@@ -37,7 +37,7 @@ static NSString * const baseURLString = @"https://raider.io/api/v1/characters/pr
                                                                                                     options:NSJSONReadingAllowFragments
                                                                                                       error:nil]));
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Loaded details for %@-%@", name, realm);
+            NSLog(@"Loaded details for %@-%@", characterID.name, characterID.realm);
             completion(character);
         });
     }] resume];
@@ -57,8 +57,8 @@ static NSString * const baseURLString = @"https://raider.io/api/v1/characters/pr
 
 #pragma mark - Private
 
-NSURLRequest *characterRequest(NSString *realm, NSString *region, NSString *name) {
-    NSString * const urlString = [NSString stringWithFormat:@"%@?region=%@&realm=%@&name=%@&fields=mythic_plus_best_runs:all,guild", baseURLString, region, realm, name];
+NSURLRequest *characterRequest(RIOCharacterID *characterID) {
+    NSString * const urlString = [NSString stringWithFormat:@"%@?region=%@&realm=%@&name=%@&fields=mythic_plus_best_runs:all,guild,mythic_plus_scores", baseURLString, characterID.region, characterID.realm, characterID.name];
     return [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
 }
 
@@ -77,6 +77,7 @@ RIOCharacter *characterFromDictionary(NSDictionary *response) {
     NSString * const realm = response[@"realm"];
     NSURL * const profileURL = [NSURL URLWithString:response[@"profile_url"]];
     RIOGuild * const guild = guildFromDictionary(response[@"guild"]);
+    RIOMythicPlusScores * const mythicPlusScores = mythicPlusScoresFromDictionary(response[@"mythic_plus_scores"]);
     return [[RIOCharacter alloc] initWithName:name
                                          race:race
                                characterClass:class
@@ -90,7 +91,8 @@ RIOCharacter *characterFromDictionary(NSDictionary *response) {
                                        region:region
                                         realm:realm
                                    profileURL:profileURL
-                                        guild:guild];
+                                        guild:guild
+                             mythicPlusScores:mythicPlusScores];
 }
 
 RIOGuild *guildFromDictionary(NSDictionary *response) {
@@ -98,6 +100,17 @@ RIOGuild *guildFromDictionary(NSDictionary *response) {
     NSString * const realm = response[@"realm"];
     return [[RIOGuild alloc] initWithName:name
                                     realm:realm];
+}
+
+RIOMythicPlusScores *mythicPlusScoresFromDictionary(NSDictionary *response) {
+    const NSInteger all = [response[@"all"] integerValue];
+    const NSInteger dps = [response[@"dps"] integerValue];
+    const NSInteger healer = [response[@"healer"] integerValue];
+    const NSInteger tank = [response[@"tank"] integerValue];
+    return [[RIOMythicPlusScores alloc] initWithAll:all
+                                                dps:dps
+                                             healer:healer
+                                               tank:tank];
 }
 
 @end

@@ -9,3 +9,6 @@
 #define RIO_VIEWCONTROLLER_INIT_UNAVAILABLE - (instancetype)initWithCoder:(NSCoder *)aDecoder __attribute__((unavailable)); \
 - (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil __attribute__((unavailable));
 
+#define RIO_INIT_UNAVAILABLE - (instancetype)init __attribute__((unavailable)); \
++ (instancetype)new __attribute__((unavailable));
+

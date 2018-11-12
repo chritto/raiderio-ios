@@ -11,14 +11,15 @@
 
 @implementation RIOCharacterPreviewViewModel
 
-- (instancetype)initWithRegion:(NSString *)region name:(NSString *)name realm:(NSString *)realm guild:(nullable NSString *)guild thumbnailURL:(nullable NSURL *)thumbnailURL
+- (instancetype)initWithCharacterID:(RIOCharacterID *)characterID realmDescription:(NSString *)realmDescription loading:(BOOL)loading guild:(nullable NSString *)guild thumbnailURL:(nullable NSURL *)thumbnailURL score:(nullable NSString *)score
 {
   if ((self = [super init])) {
-    _region = [region copy];
-    _name = [name copy];
-    _realm = [realm copy];
+    _characterID = [characterID copy];
+    _realmDescription = [realmDescription copy];
+    _loading = loading;
     _guild = [guild copy];
     _thumbnailURL = [thumbnailURL copy];
+    _score = [score copy];
   }
 
   return self;
@@ -31,7 +32,7 @@
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%@ - \n\t region: %@; \n\t name: %@; \n\t realm: %@; \n\t guild: %@; \n\t thumbnailURL: %@; \n", [super description], _region, _name, _realm, _guild, _thumbnailURL];
+  return [NSString stringWithFormat:@"%@ - \n\t characterID: %@; \n\t realmDescription: %@; \n\t loading: %@; \n\t guild: %@; \n\t thumbnailURL: %@; \n\t score: %@; \n", [super description], _characterID, _realmDescription, _loading ? @"YES" : @"NO", _guild, _thumbnailURL, _score];
 }
 
 - (id<NSObject>)diffIdentifier
@@ -41,9 +42,9 @@
 
 - (NSUInteger)hash
 {
-  NSUInteger subhashes[] = {[_region hash], [_name hash], [_realm hash], [_guild hash], [_thumbnailURL hash]};
+  NSUInteger subhashes[] = {[_characterID hash], [_realmDescription hash], (NSUInteger)_loading, [_guild hash], [_thumbnailURL hash], [_score hash]};
   NSUInteger result = subhashes[0];
-  for (int ii = 1; ii < 5; ++ii) {
+  for (int ii = 1; ii < 6; ++ii) {
     unsigned long long base = (((unsigned long long)result) << 32 | subhashes[ii]);
     base = (~base) + (base << 18);
     base ^= (base >> 31);
@@ -64,11 +65,12 @@
     return NO;
   }
   return
-    (_region == object->_region ? YES : [_region isEqual:object->_region]) &&
-    (_name == object->_name ? YES : [_name isEqual:object->_name]) &&
-    (_realm == object->_realm ? YES : [_realm isEqual:object->_realm]) &&
+    _loading == object->_loading &&
+    (_characterID == object->_characterID ? YES : [_characterID isEqual:object->_characterID]) &&
+    (_realmDescription == object->_realmDescription ? YES : [_realmDescription isEqual:object->_realmDescription]) &&
     (_guild == object->_guild ? YES : [_guild isEqual:object->_guild]) &&
-    (_thumbnailURL == object->_thumbnailURL ? YES : [_thumbnailURL isEqual:object->_thumbnailURL]);
+    (_thumbnailURL == object->_thumbnailURL ? YES : [_thumbnailURL isEqual:object->_thumbnailURL]) &&
+    (_score == object->_score ? YES : [_score isEqual:object->_score]);
 }
 
 - (BOOL)isEqualToDiffableObject:(nullable id)object
