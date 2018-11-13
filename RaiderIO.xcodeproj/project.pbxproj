@@ -27,6 +27,7 @@
 		ACCAEF5021979357002F76C4 /* RIOCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF4F21979357002F76C4 /* RIOCollections.m */; };
 		ACCAEF52219908F2002F76C4 /* RIOMythicPlusScores.value in Resources */ = {isa = PBXBuildFile; fileRef = ACCAEF51219908F2002F76C4 /* RIOMythicPlusScores.value */; };
 		ACCAEF5521990925002F76C4 /* RIOMythicPlusScores.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF5421990925002F76C4 /* RIOMythicPlusScores.m */; };
+		ACDE1ACC219B547D009D5556 /* RIOGuild.value in Resources */ = {isa = PBXBuildFile; fileRef = ACDE1ACB219B547D009D5556 /* RIOGuild.value */; };
 		ACF60E8B2189991400E30606 /* RIOCharacterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */; };
 		F63EA491F1983092C9425DB9 /* libPods-RaiderIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A237742C56B459CE348C09 /* libPods-RaiderIO.a */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		ACCAEF51219908F2002F76C4 /* RIOMythicPlusScores.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOMythicPlusScores.value; sourceTree = "<group>"; };
 		ACCAEF5321990925002F76C4 /* RIOMythicPlusScores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOMythicPlusScores.h; sourceTree = "<group>"; };
 		ACCAEF5421990925002F76C4 /* RIOMythicPlusScores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOMythicPlusScores.m; sourceTree = "<group>"; };
+		ACDE1ACB219B547D009D5556 /* RIOGuild.value */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RIOGuild.value; sourceTree = "<group>"; };
 		ACF60E892189991400E30606 /* RIOCharacterListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterListViewController.h; sourceTree = "<group>"; };
 		ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterListViewController.m; sourceTree = "<group>"; };
 		ACF60E8D21899A0100E30606 /* RIOMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOMacros.h; sourceTree = "<group>"; };
@@ -125,17 +127,6 @@
 			children = (
 				AC2EF198218D861000C92D37 /* RIOCharacterService.h */,
 				AC2EF199218D861000C92D37 /* RIOCharacterService.m */,
-				ACCAEF45219786CA002F76C4 /* RIOCharacter.value */,
-				AC2EF19E218F589000C92D37 /* RIOCharacter.h */,
-				AC2EF19D218F589000C92D37 /* RIOCharacter.m */,
-				ACCAEF4621979249002F76C4 /* RIOCharacterID.value */,
-				ACCAEF4921979270002F76C4 /* RIOCharacterID.h */,
-				ACCAEF4821979270002F76C4 /* RIOCharacterID.m */,
-				ACCAEF51219908F2002F76C4 /* RIOMythicPlusScores.value */,
-				ACCAEF5321990925002F76C4 /* RIOMythicPlusScores.h */,
-				ACCAEF5421990925002F76C4 /* RIOMythicPlusScores.m */,
-				AC2EF19B218F589000C92D37 /* RIOGuild.h */,
-				AC2EF19C218F589000C92D37 /* RIOGuild.m */,
 				ACCAEF4B219792A6002F76C4 /* RIOCharacterCache.h */,
 				ACCAEF4C219792A6002F76C4 /* RIOCharacterCache.m */,
 			);
@@ -191,6 +182,7 @@
 		AC3F9F0C21882CF200679F1F /* RaiderIO */ = {
 			isa = PBXGroup;
 			children = (
+				ACDE1ACA219B542B009D5556 /* DataModels */,
 				ACF60E8C218999EF00E30606 /* Utilities */,
 				AC2EF197218D85DF00C92D37 /* Services */,
 				AC0A9ACF21900888002BD60F /* Screens */,
@@ -211,6 +203,25 @@
 				AC3F9F2821882CF300679F1F /* Info.plist */,
 			);
 			path = RaiderIOTests;
+			sourceTree = "<group>";
+		};
+		ACDE1ACA219B542B009D5556 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				ACCAEF51219908F2002F76C4 /* RIOMythicPlusScores.value */,
+				ACCAEF5321990925002F76C4 /* RIOMythicPlusScores.h */,
+				ACCAEF5421990925002F76C4 /* RIOMythicPlusScores.m */,
+				ACCAEF45219786CA002F76C4 /* RIOCharacter.value */,
+				AC2EF19E218F589000C92D37 /* RIOCharacter.h */,
+				AC2EF19D218F589000C92D37 /* RIOCharacter.m */,
+				ACCAEF4621979249002F76C4 /* RIOCharacterID.value */,
+				ACCAEF4921979270002F76C4 /* RIOCharacterID.h */,
+				ACCAEF4821979270002F76C4 /* RIOCharacterID.m */,
+				ACDE1ACB219B547D009D5556 /* RIOGuild.value */,
+				AC2EF19B218F589000C92D37 /* RIOGuild.h */,
+				AC2EF19C218F589000C92D37 /* RIOGuild.m */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		ACF60E85218998C300E30606 /* CharacterList */ = {
@@ -334,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDE1ACC219B547D009D5556 /* RIOGuild.value in Resources */,
 				AC3F9F1A21882CF200679F1F /* LaunchScreen.storyboard in Resources */,
 				AC3F9F1721882CF200679F1F /* Assets.xcassets in Resources */,
 				ACCAEF4721979249002F76C4 /* RIOCharacterID.value in Resources */,

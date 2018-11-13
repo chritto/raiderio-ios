@@ -39,7 +39,7 @@
 }
 
 - (UIEdgeInsets)insets {
-    return UIEdgeInsetsMake(8, 8, 8, 8);
+    return UIEdgeInsetsMake(8, 8, 0, 8);
 }
 
 - (CGFloat)horizontalPadding {
