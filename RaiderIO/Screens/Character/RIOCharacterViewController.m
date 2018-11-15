@@ -8,11 +8,15 @@
 
 #import "RIOCharacterViewController.h"
 
+#import <IGListKit/IGListKit.h>
+
 #import "RIOCharacterService.h"
 
 @implementation RIOCharacterViewController {
     RIOCharacter *_character;
     RIOCharacterService *_characterService;
+
+    UICollectionViewController *_collectionViewController;
 }
 
 - (instancetype)initWithCharacter:(RIOCharacter *)character {
@@ -28,6 +32,9 @@
 
     self.navigationItem.title = _character.name;
     self.view.backgroundColor = [UIColor redColor];
+
+    UICollectionViewFlowLayout * const layout = [UICollectionViewFlowLayout new];
+    _collectionViewController = [[UICollectionViewController alloc] initWithCollectionViewLayout:layout];
 }
 
 - (void)viewDidLayoutSubviews {
