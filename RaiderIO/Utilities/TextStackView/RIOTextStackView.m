@@ -34,6 +34,9 @@
         label.attributedText = text;
         return label;
     }];
+    for (UILabel *label in _labels) {
+        [self addSubview:label];
+    }
     [self setNeedsLayout];
 }
 

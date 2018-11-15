@@ -9,6 +9,7 @@
 #import "RIOTextStackViewModel+Layout.h"
 
 #import "RIOGeometry.h"
+#import "RIOCollections.h"
 
 @implementation RIOTextStackViewModel (Layout)
 
@@ -29,10 +30,28 @@
 
 - (CGSize)sizeWithConstrainingSize:(CGSize)constrainingSize {
     NSArray<NSValue *> *frames = [self textFramesWithConstrainingSize:constrainingSize];
-    const CGRect firstFrame = [frames[0] CGRectValue];
-    const CGRect lastFrame = [frames[frames.count - 1] CGRectValue];
-    return CGSizeMake(CGRectGetMaxX(lastFrame) - CGRectGetMinX(firstFrame),
-                      CGRectGetMaxY(lastFrame) - CGRectGetMinY(firstFrame));
+    switch (self.direction) {
+        case RIOTextStackDirectionVertical: {
+            CGFloat totalHeight = 0;
+            CGFloat maxWidth = 0;
+            for (NSValue * const frameValue in frames) {
+                const CGRect frame = [frameValue CGRectValue];
+                totalHeight += frame.size.height;
+                maxWidth = MAX(maxWidth, frame.size.width);
+            }
+            return CGSizeMake(maxWidth, totalHeight);
+        }
+        case RIOTextStackDirectionHorizontal: {
+            CGFloat totalWidth = 0;
+            CGFloat maxHeight = 0;
+            for (NSValue * const frameValue in frames) {
+                const CGRect frame = [frameValue CGRectValue];
+                totalWidth += frame.size.width;
+                maxHeight = MAX(maxHeight, frame.size.height);
+            }
+            return CGSizeMake(totalWidth, maxHeight);
+        }
+    }
 }
 
 #pragma mark - Private

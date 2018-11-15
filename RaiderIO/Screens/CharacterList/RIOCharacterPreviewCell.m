@@ -11,14 +11,15 @@
 #import "RIOCharacter.h"
 #import "RIOCharacterService.h"
 #import "RIOCharacterPreviewViewModel+Layout.h"
+#import "RIOTextStackView.h"
+#import "RIOTextStackViewModel.h"
+#import "RIOTextStackViewModel+Layout.h"
 
 @implementation RIOCharacterPreviewCell {
     RIOCharacterPreviewViewModel *_viewModel;
     RIOCharacterService *_characterService;
 
-    UILabel *_nameLabel;
-    UILabel *_guildLabel;
-    UILabel *_realmLabel;
+    RIOTextStackView *_textStackView;
     UILabel *_scoreLabel;
     UIImageView *_thumbnailView;
     UIActivityIndicatorView *_activityIndicatorView;
@@ -28,17 +29,8 @@
     if (self = [super initWithFrame:frame]) {
         _characterService = [RIOCharacterService new];
 
-        _nameLabel = [UILabel new];
-        _nameLabel.font = _viewModel.font;
-        [self.contentView addSubview:_nameLabel];
-
-        _guildLabel = [UILabel new];
-        _guildLabel.font = _viewModel.font;
-        [self.contentView addSubview:_guildLabel];
-
-        _realmLabel = [UILabel new];
-        _realmLabel.font = _viewModel.font;
-        [self.contentView addSubview:_realmLabel];
+        _textStackView = [RIOTextStackView new];
+        [self.contentView addSubview:_textStackView];
 
         _scoreLabel = [UILabel new];
         _scoreLabel.font = _viewModel.font;
@@ -55,9 +47,7 @@
 }
 
 - (void)configureWithViewModel:(RIOCharacterPreviewViewModel *)viewModel {
-    _nameLabel.text = viewModel.characterID.name;
-    _guildLabel.text = viewModel.guild;
-    _realmLabel.text = viewModel.characterID.realm;
+    [_textStackView configureWithViewModel:viewModel.textStackViewModel];
     _scoreLabel.text = viewModel.score;
     [_characterService fetchThumbnailWithURL:viewModel.thumbnailURL completion:^(UIImage * _Nullable image) {
         self->_thumbnailView.image = image;
@@ -74,11 +64,9 @@
 }
 
 - (void)layoutSubviews {
-    const CGSize nameSize = _viewModel.nameSize;
-    const CGSize guildSize = _viewModel.guildSize;
-    const CGSize realmSize = _viewModel.realmSize;
     const CGSize scoreSize = _viewModel.scoreSize;
-    const CGFloat thumbnailHeight = nameSize.height + guildSize.height + realmSize.height;
+    const CGSize textStackSize = [_viewModel.textStackViewModel sizeWithConstrainingSize:self.contentView.frame.size];
+    const CGFloat thumbnailHeight = textStackSize.height;
     const CGFloat horizontalPadding = _viewModel.horizontalPadding;
     const UIEdgeInsets insets = _viewModel.insets;
     const CGFloat maxX = CGRectGetWidth(self.contentView.frame) - insets.right - scoreSize.width - horizontalPadding;
@@ -89,20 +77,7 @@
                                                             thumbnailHeight,
                                                             thumbnailHeight));
     CGFloat const xPos = CGRectGetMaxX(thumbnailFrame) + horizontalPadding;
-    _nameLabel.frame = CGRectMake(xPos,
-                                 yPos,
-                                 nameSize.width,
-                                 nameSize.height);
-    yPos += nameSize.height;
-    _guildLabel.frame = CGRectMake(xPos,
-                                  yPos,
-                                  guildSize.width,
-                                  guildSize.height);
-    yPos += guildSize.height;
-    _realmLabel.frame = CGRectMake(xPos,
-                                  yPos,
-                                  realmSize.width,
-                                  realmSize.height);
+    _textStackView.frame = CGRectMake(xPos, yPos, textStackSize.width, textStackSize.height);
     _thumbnailView.frame = thumbnailFrame;
     _scoreLabel.frame = CGRectMake(maxX + horizontalPadding,
                                    CGRectGetHeight(self.contentView.frame)/2.0 - scoreSize.height/2,

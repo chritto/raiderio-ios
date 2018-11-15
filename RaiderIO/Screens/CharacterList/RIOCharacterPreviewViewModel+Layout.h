@@ -10,17 +10,15 @@
 
 #import "RIOCharacterPreviewViewModel.h"
 
+@class RIOTextStackViewModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RIOCharacterPreviewViewModel (Layout)
 
 - (CGSize)sizeForConstrainingSize:(CGSize)constrainingSize;
 
-- (CGSize)nameSize;
-
-- (CGSize)guildSize;
-
-- (CGSize)realmSize;
+- (RIOTextStackViewModel *)textStackViewModel;
 
 - (CGSize)scoreSize;
 

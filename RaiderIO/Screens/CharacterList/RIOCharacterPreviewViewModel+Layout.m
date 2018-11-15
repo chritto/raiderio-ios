@@ -8,30 +8,29 @@
 
 #import "RIOCharacterPreviewViewModel+Layout.h"
 
+#import "RIOTextStackViewModel.h"
+#import "RIOTextStackViewModel+Layout.h"
+
 @implementation RIOCharacterPreviewViewModel (Layout)
 
 - (CGSize)sizeForConstrainingSize:(CGSize)constrainingSize {
-    const CGSize nameSize = [self nameSize];
-    const CGSize guildSize = [self guildSize];
-    const CGSize realmSize = [self realmSize];
+    const CGSize textStackSize = [self.textStackViewModel sizeWithConstrainingSize:constrainingSize];
     return CGSizeMake(constrainingSize.width,
-                      (nameSize.height
-                       + guildSize.height
-                       + realmSize.height
+                      (textStackSize.height
                        + self.insets.top
                        + self.insets.bottom));
 }
 
-- (CGSize)nameSize {
-    return sizeForText(self.characterID.name, self.font);
-}
+- (RIOTextStackViewModel *)textStackViewModel {
+    NSDictionary<NSAttributedStringKey, id> *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:17]};
 
-- (CGSize)guildSize {
-    return sizeForText(self.guild, self.font);
-}
+    NSArray<NSAttributedString *> * const texts
+    = @[ [[NSAttributedString alloc] initWithString:self.characterID.name attributes:attributes],
+         [[NSAttributedString alloc] initWithString:self.guild attributes:attributes],
+         [[NSAttributedString alloc] initWithString:self.characterID.realm attributes:attributes]
+         ];
 
-- (CGSize)realmSize {
-    return sizeForText(self.characterID.realm, self.font);
+    return [[RIOTextStackViewModel alloc] initWithTexts:texts direction:RIOTextStackDirectionVertical];
 }
 
 - (CGSize)scoreSize {
