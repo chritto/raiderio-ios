@@ -1,3 +1,5 @@
+%type name=RIOMythicPlusBestRun file=RIOMythicPlusBestRun
+
 RIOCharacter {
     NSString *name
     NSString *race
@@ -14,4 +16,5 @@ RIOCharacter {
     NSURL *profileURL
     RIOGuild *guild
     RIOMythicPlusScores *mythicPlusScores
+    NSArray<RIOMythicPlusBestRun *> *mythicPlusBestRuns
 }

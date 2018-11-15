@@ -12,6 +12,8 @@
 #import "RIOCharacterID.h"
 #import "RIOGuild.h"
 #import "RIOMythicPlusScores.h"
+#import "RIOMythicPlusBestRun.h"
+#import "RIOCollections.h"
 
 static NSString * const baseURLString = @"https://raider.io/api/v1/characters/profile";
 
@@ -78,6 +80,7 @@ RIOCharacter *characterFromDictionary(NSDictionary *response) {
     NSURL * const profileURL = [NSURL URLWithString:response[@"profile_url"]];
     RIOGuild * const guild = guildFromDictionary(response[@"guild"]);
     RIOMythicPlusScores * const mythicPlusScores = mythicPlusScoresFromDictionary(response[@"mythic_plus_scores"]);
+    NSArray<RIOMythicPlusBestRun *> * const mythicPlusBestRuns = mythicPlusBestRunsFromDictionary(response[@"mythic_plus_best_runs"]);
     return [[RIOCharacter alloc] initWithName:name
                                          race:race
                                characterClass:class
@@ -92,7 +95,8 @@ RIOCharacter *characterFromDictionary(NSDictionary *response) {
                                         realm:realm
                                    profileURL:profileURL
                                         guild:guild
-                             mythicPlusScores:mythicPlusScores];
+                             mythicPlusScores:mythicPlusScores
+                           mythicPlusBestRuns:mythicPlusBestRuns];
 }
 
 RIOGuild *guildFromDictionary(NSDictionary *response) {
@@ -111,6 +115,19 @@ RIOMythicPlusScores *mythicPlusScoresFromDictionary(NSDictionary *response) {
                                                 dps:dps
                                              healer:healer
                                                tank:tank];
+}
+
+NSArray<RIOMythicPlusBestRun *> *mythicPlusBestRunsFromDictionary(NSArray<NSDictionary *> *response) {
+    return [response rio_map:^RIOMythicPlusBestRun *(NSDictionary<NSString*, id> *response) {
+        return mythicPlusBestRunFromDictionary(response);
+    }];
+}
+
+RIOMythicPlusBestRun *mythicPlusBestRunFromDictionary(NSDictionary *response) {
+    NSString * const dungeon = response[@"dungeon"];
+    const NSUInteger level = [response[@"mythic_level"] unsignedIntegerValue];
+    const CGFloat score = [response[@"score"] doubleValue];
+    return [[RIOMythicPlusBestRun alloc] initWithDungeon:dungeon level:level score:score];
 }
 
 @end

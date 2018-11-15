@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6BAA6731F5CB62E49726756C /* libPods-RaiderIOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51280EB80594DB4C32C0ED27 /* libPods-RaiderIOTests.a */; };
 		AC0A9AD321900965002BD60F /* RIOCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0A9AD221900965002BD60F /* RIOCharacterViewController.m */; };
+		AC0CE031219E2FD400970B5E /* RIOMythicPlusBestRun.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0CE02F219E2FD400970B5E /* RIOMythicPlusBestRun.m */; };
 		AC2EF19A218D861000C92D37 /* RIOCharacterService.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF199218D861000C92D37 /* RIOCharacterService.m */; };
 		AC2EF19F218F589100C92D37 /* RIOGuild.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF19C218F589000C92D37 /* RIOGuild.m */; };
 		AC2EF1A0218F589100C92D37 /* RIOCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF19D218F589000C92D37 /* RIOCharacter.m */; };
@@ -54,6 +55,9 @@
 		760A8336544DA1A4A5D09461 /* Pods-RaiderIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiderIO.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaiderIO/Pods-RaiderIO.release.xcconfig"; sourceTree = "<group>"; };
 		AC0A9AD121900965002BD60F /* RIOCharacterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterViewController.h; sourceTree = "<group>"; };
 		AC0A9AD221900965002BD60F /* RIOCharacterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterViewController.m; sourceTree = "<group>"; };
+		AC0CE02E219E2F5400970B5E /* RIOMythicPlusBestRun.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOMythicPlusBestRun.value; sourceTree = "<group>"; };
+		AC0CE02F219E2FD400970B5E /* RIOMythicPlusBestRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOMythicPlusBestRun.m; sourceTree = "<group>"; };
+		AC0CE030219E2FD400970B5E /* RIOMythicPlusBestRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOMythicPlusBestRun.h; sourceTree = "<group>"; };
 		AC2EF198218D861000C92D37 /* RIOCharacterService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterService.h; sourceTree = "<group>"; };
 		AC2EF199218D861000C92D37 /* RIOCharacterService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterService.m; sourceTree = "<group>"; };
 		AC2EF19B218F589000C92D37 /* RIOGuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOGuild.h; sourceTree = "<group>"; };
@@ -226,6 +230,9 @@
 				ACDE1ACB219B547D009D5556 /* RIOGuild.value */,
 				AC2EF19B218F589000C92D37 /* RIOGuild.h */,
 				AC2EF19C218F589000C92D37 /* RIOGuild.m */,
+				AC0CE02E219E2F5400970B5E /* RIOMythicPlusBestRun.value */,
+				AC0CE030219E2FD400970B5E /* RIOMythicPlusBestRun.h */,
+				AC0CE02F219E2FD400970B5E /* RIOMythicPlusBestRun.m */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -438,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0CE031219E2FD400970B5E /* RIOMythicPlusBestRun.m in Sources */,
 				AC0A9AD321900965002BD60F /* RIOCharacterViewController.m in Sources */,
 				AC3F9F1D21882CF300679F1F /* main.m in Sources */,
 				ACCAEF4D219792A6002F76C4 /* RIOCharacterCache.m in Sources */,
