@@ -27,6 +27,16 @@
     return frames;
 }
 
+- (CGSize)sizeWithConstrainingSize:(CGSize)constrainingSize {
+    NSArray<NSValue *> *frames = [self textFramesWithConstrainingSize:constrainingSize];
+    const CGRect firstFrame = [frames[0] CGRectValue];
+    const CGRect lastFrame = [frames[frames.count - 1] CGRectValue];
+    return CGSizeMake(CGRectGetMaxX(lastFrame) - CGRectGetMinX(firstFrame),
+                      CGRectGetMaxY(lastFrame) - CGRectGetMinY(firstFrame));
+}
+
+#pragma mark - Private
+
 static CGPoint nextFrameOrigin(RIOTextStackViewDirection direction, CGRect prevFrame) {
     switch (direction) {
         case RIOTextStackDirectionVertical:
