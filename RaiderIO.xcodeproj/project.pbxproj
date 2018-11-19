@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6BAA6731F5CB62E49726756C /* libPods-RaiderIOTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51280EB80594DB4C32C0ED27 /* libPods-RaiderIOTests.a */; };
 		AC0A9AD321900965002BD60F /* RIOCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0A9AD221900965002BD60F /* RIOCharacterViewController.m */; };
 		AC0CE031219E2FD400970B5E /* RIOMythicPlusBestRun.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0CE02F219E2FD400970B5E /* RIOMythicPlusBestRun.m */; };
+		AC16155F21A34547009770DF /* IGListKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC16155E21A34547009770DF /* IGListKit.framework.dSYM */; };
+		AC26DE2D21A34307000B17F2 /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC26DE2C21A34307000B17F2 /* IGListKit.framework */; };
 		AC2EF19A218D861000C92D37 /* RIOCharacterService.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF199218D861000C92D37 /* RIOCharacterService.m */; };
 		AC2EF19F218F589100C92D37 /* RIOGuild.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF19C218F589000C92D37 /* RIOGuild.m */; };
 		AC2EF1A0218F589100C92D37 /* RIOCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF19D218F589000C92D37 /* RIOCharacter.m */; };
@@ -35,7 +36,6 @@
 		ACFF0D1C219D4654008BDD02 /* RIOTextStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0D1B219D4654008BDD02 /* RIOTextStackView.m */; };
 		ACFF0D1F219D471D008BDD02 /* RIOTextStackViewModel+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0D1E219D471D008BDD02 /* RIOTextStackViewModel+Layout.m */; };
 		ACFF0D24219DE0E3008BDD02 /* RIOGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0D23219DE0E3008BDD02 /* RIOGeometry.m */; };
-		F63EA491F1983092C9425DB9 /* libPods-RaiderIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A237742C56B459CE348C09 /* libPods-RaiderIO.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,16 +48,37 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AC16155921A344F2009770DF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				AC16155F21A34547009770DF /* IGListKit.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC26DE2B21A3402F000B17F2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		47FCA63E24B9E90751E9FE00 /* Pods-RaiderIOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiderIOTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaiderIOTests/Pods-RaiderIOTests.debug.xcconfig"; sourceTree = "<group>"; };
-		51280EB80594DB4C32C0ED27 /* libPods-RaiderIOTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RaiderIOTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		69420C5540F7FE9028975975 /* Pods-RaiderIO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiderIO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaiderIO/Pods-RaiderIO.debug.xcconfig"; sourceTree = "<group>"; };
-		760A8336544DA1A4A5D09461 /* Pods-RaiderIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiderIO.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaiderIO/Pods-RaiderIO.release.xcconfig"; sourceTree = "<group>"; };
 		AC0A9AD121900965002BD60F /* RIOCharacterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterViewController.h; sourceTree = "<group>"; };
 		AC0A9AD221900965002BD60F /* RIOCharacterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterViewController.m; sourceTree = "<group>"; };
 		AC0CE02E219E2F5400970B5E /* RIOMythicPlusBestRun.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOMythicPlusBestRun.value; sourceTree = "<group>"; };
 		AC0CE02F219E2FD400970B5E /* RIOMythicPlusBestRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOMythicPlusBestRun.m; sourceTree = "<group>"; };
 		AC0CE030219E2FD400970B5E /* RIOMythicPlusBestRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOMythicPlusBestRun.h; sourceTree = "<group>"; };
+		AC16155E21A34547009770DF /* IGListKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = IGListKit.framework.dSYM; sourceTree = "<group>"; };
+		AC26DE2C21A34307000B17F2 /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		AC2EF198218D861000C92D37 /* RIOCharacterService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterService.h; sourceTree = "<group>"; };
 		AC2EF199218D861000C92D37 /* RIOCharacterService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterService.m; sourceTree = "<group>"; };
 		AC2EF19B218F589000C92D37 /* RIOGuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOGuild.h; sourceTree = "<group>"; };
@@ -107,16 +128,14 @@
 		ACFF0D1E219D471D008BDD02 /* RIOTextStackViewModel+Layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RIOTextStackViewModel+Layout.m"; sourceTree = "<group>"; };
 		ACFF0D22219DE0E3008BDD02 /* RIOGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOGeometry.h; sourceTree = "<group>"; };
 		ACFF0D23219DE0E3008BDD02 /* RIOGeometry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOGeometry.m; sourceTree = "<group>"; };
-		B5A237742C56B459CE348C09 /* libPods-RaiderIO.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RaiderIO.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D34BE2317550523E986A4AEB /* Pods-RaiderIOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiderIOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaiderIOTests/Pods-RaiderIOTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AC3F9F0721882CF200679F1F /* Frameworks */ = {
+		AC26DE2A21A3402F000B17F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F63EA491F1983092C9425DB9 /* libPods-RaiderIO.a in Frameworks */,
+				AC26DE2D21A34307000B17F2 /* IGListKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +143,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BAA6731F5CB62E49726756C /* libPods-RaiderIOTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +152,8 @@
 		65AC241815E12F401EC8F7BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B5A237742C56B459CE348C09 /* libPods-RaiderIO.a */,
-				51280EB80594DB4C32C0ED27 /* libPods-RaiderIOTests.a */,
+				AC16155E21A34547009770DF /* IGListKit.framework.dSYM */,
+				AC26DE2C21A34307000B17F2 /* IGListKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,7 +193,6 @@
 				AC3F9F0C21882CF200679F1F /* RaiderIO */,
 				AC3F9F2521882CF300679F1F /* RaiderIOTests */,
 				AC3F9F0B21882CF200679F1F /* Products */,
-				C124595CA3A39DB951323515 /* Pods */,
 				65AC241815E12F401EC8F7BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -282,17 +299,6 @@
 			path = TextStackView;
 			sourceTree = "<group>";
 		};
-		C124595CA3A39DB951323515 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				69420C5540F7FE9028975975 /* Pods-RaiderIO.debug.xcconfig */,
-				760A8336544DA1A4A5D09461 /* Pods-RaiderIO.release.xcconfig */,
-				47FCA63E24B9E90751E9FE00 /* Pods-RaiderIOTests.debug.xcconfig */,
-				D34BE2317550523E986A4AEB /* Pods-RaiderIOTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -300,10 +306,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC3F9F2B21882CF300679F1F /* Build configuration list for PBXNativeTarget "RaiderIO" */;
 			buildPhases = (
-				74267BA280C1D333E46C5542 /* [CP] Check Pods Manifest.lock */,
 				AC3F9F0621882CF200679F1F /* Sources */,
-				AC3F9F0721882CF200679F1F /* Frameworks */,
 				AC3F9F0821882CF200679F1F /* Resources */,
+				AC26DE2021A222E6000B17F2 /* ShellScript */,
+				AC26DE2A21A3402F000B17F2 /* Frameworks */,
+				AC26DE2B21A3402F000B17F2 /* Embed Frameworks */,
+				AC16155921A344F2009770DF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -318,7 +326,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC3F9F2E21882CF300679F1F /* Build configuration list for PBXNativeTarget "RaiderIOTests" */;
 			buildPhases = (
-				0A0F8FCACEEFAFCBEAD972DE /* [CP] Check Pods Manifest.lock */,
 				AC3F9F1E21882CF300679F1F /* Sources */,
 				AC3F9F1F21882CF300679F1F /* Frameworks */,
 				AC3F9F2021882CF300679F1F /* Resources */,
@@ -394,7 +401,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A0F8FCACEEFAFCBEAD972DE /* [CP] Check Pods Manifest.lock */ = {
+		AC26DE2021A222E6000B17F2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,41 +409,16 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"$(SRCROOT)/Carthage/Build/iOS/IGListKit.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RaiderIOTests-checkManifestLockResult.txt",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IGListKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74267BA280C1D333E46C5542 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RaiderIO-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -612,10 +594,13 @@
 		};
 		AC3F9F2C21882CF300679F1F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69420C5540F7FE9028975975 /* Pods-RaiderIO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RaiderIO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -629,10 +614,13 @@
 		};
 		AC3F9F2D21882CF300679F1F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 760A8336544DA1A4A5D09461 /* Pods-RaiderIO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RaiderIO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -646,7 +634,6 @@
 		};
 		AC3F9F2F21882CF300679F1F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47FCA63E24B9E90751E9FE00 /* Pods-RaiderIOTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -665,7 +652,6 @@
 		};
 		AC3F9F3021882CF300679F1F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D34BE2317550523E986A4AEB /* Pods-RaiderIOTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
