@@ -14,15 +14,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^RIOCharacterServiceFetchCompletionBlock)(RIOCharacter * _Nullable character);
-typedef void (^RIOCharacterServiceThumbnailCompletionBlock)(UIImage * _Nullable image);
 
 @interface RIOCharacterService : NSObject
 
 - (void)fetchCharacterWithID:(RIOCharacterID *)characterID
                   completion:(RIOCharacterServiceFetchCompletionBlock)completion;
-
-- (void)fetchThumbnailWithURL:(NSURL *)url
-                   completion:(RIOCharacterServiceThumbnailCompletionBlock)completion;
 
 @end
 

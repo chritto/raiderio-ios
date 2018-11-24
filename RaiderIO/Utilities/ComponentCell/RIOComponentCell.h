@@ -1,5 +1,5 @@
 //
-//  RIOCharacterCell.h
+//  RIOComponentCell.h
 //  RaiderIO
 //
 //  Created by Chris McGrath on 10/31/18.
@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RIOCharacterPreviewViewModel.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RIOCharacterPreviewCell : UICollectionViewCell
+@class CKComponent;
 
-- (void)configureWithViewModel:(RIOCharacterPreviewViewModel *)viewModel;
+@interface RIOComponentCell : UICollectionViewCell
+
+- (void)configureWithComponent:(CKComponent *)component;
 
 @end
 

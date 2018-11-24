@@ -18,10 +18,11 @@
 		AC3F9F1A21882CF200679F1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3F9F1821882CF200679F1F /* LaunchScreen.storyboard */; };
 		AC3F9F1D21882CF300679F1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3F9F1C21882CF300679F1F /* main.m */; };
 		AC3F9F2721882CF300679F1F /* RaiderIOTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3F9F2621882CF300679F1F /* RaiderIOTests.m */; };
+		AC6D5B6321A62CC8002E9460 /* RIOUserSession.mm in Sources */ = {isa = PBXBuildFile; fileRef = AC6D5B6221A62CC8002E9460 /* RIOUserSession.mm */; };
+		AC6D5B6621A62D4B002E9460 /* RIOImageDownloader.mm in Sources */ = {isa = PBXBuildFile; fileRef = AC6D5B6521A62D4B002E9460 /* RIOImageDownloader.mm */; };
 		ACA03C6A21899F0000BAA882 /* RIOCharacterPreviewViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA03C6821899F0000BAA882 /* RIOCharacterPreviewViewModel.m */; };
-		ACA03C6D2189A11B00BAA882 /* RIOCharacterPreviewSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA03C6C2189A11B00BAA882 /* RIOCharacterPreviewSectionController.m */; };
-		ACA03C702189A21700BAA882 /* RIOCharacterPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA03C6F2189A21700BAA882 /* RIOCharacterPreviewCell.m */; };
-		ACA03C732189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA03C722189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.m */; };
+		ACA03C6D2189A11B00BAA882 /* RIOCharacterPreviewSectionController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACA03C6C2189A11B00BAA882 /* RIOCharacterPreviewSectionController.mm */; };
+		ACA03C702189A21700BAA882 /* RIOComponentCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACA03C6F2189A21700BAA882 /* RIOComponentCell.mm */; };
 		ACCAEF4721979249002F76C4 /* RIOCharacterID.value in Resources */ = {isa = PBXBuildFile; fileRef = ACCAEF4621979249002F76C4 /* RIOCharacterID.value */; };
 		ACCAEF4A21979270002F76C4 /* RIOCharacterID.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF4821979270002F76C4 /* RIOCharacterID.m */; };
 		ACCAEF4D219792A6002F76C4 /* RIOCharacterCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF4C219792A6002F76C4 /* RIOCharacterCache.m */; };
@@ -32,12 +33,9 @@
 		ACD2791321A3957900F60394 /* ComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD2791221A3957900F60394 /* ComponentKit.framework */; };
 		ACD2791721A395E400F60394 /* ComponentKit.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = ACD2791621A395E400F60394 /* ComponentKit.framework.dSYM */; };
 		ACD2791821A395F800F60394 /* ComponentKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACD2791621A395E400F60394 /* ComponentKit.framework.dSYM */; };
+		ACD2791E21A3969300F60394 /* RIOCharacterPreviewComponent.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACD2791D21A3969300F60394 /* RIOCharacterPreviewComponent.mm */; };
 		ACDE1ACC219B547D009D5556 /* RIOGuild.value in Resources */ = {isa = PBXBuildFile; fileRef = ACDE1ACB219B547D009D5556 /* RIOGuild.value */; };
 		ACF60E8B2189991400E30606 /* RIOCharacterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */; };
-		ACFF0D16219D451F008BDD02 /* RIOTextStackViewModel.value in Resources */ = {isa = PBXBuildFile; fileRef = ACFF0D15219D451F008BDD02 /* RIOTextStackViewModel.value */; };
-		ACFF0D19219D4616008BDD02 /* RIOTextStackViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0D17219D4616008BDD02 /* RIOTextStackViewModel.m */; };
-		ACFF0D1C219D4654008BDD02 /* RIOTextStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0D1B219D4654008BDD02 /* RIOTextStackView.m */; };
-		ACFF0D1F219D471D008BDD02 /* RIOTextStackViewModel+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0D1E219D471D008BDD02 /* RIOTextStackViewModel+Layout.m */; };
 		ACFF0D24219DE0E3008BDD02 /* RIOGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF0D23219DE0E3008BDD02 /* RIOGeometry.m */; };
 /* End PBXBuildFile section */
 
@@ -98,14 +96,16 @@
 		AC3F9F2221882CF300679F1F /* RaiderIOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaiderIOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3F9F2621882CF300679F1F /* RaiderIOTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaiderIOTests.m; sourceTree = "<group>"; };
 		AC3F9F2821882CF300679F1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC6D5B6121A62CC8002E9460 /* RIOUserSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOUserSession.h; sourceTree = "<group>"; };
+		AC6D5B6221A62CC8002E9460 /* RIOUserSession.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RIOUserSession.mm; sourceTree = "<group>"; };
+		AC6D5B6421A62D4B002E9460 /* RIOImageDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOImageDownloader.h; sourceTree = "<group>"; };
+		AC6D5B6521A62D4B002E9460 /* RIOImageDownloader.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RIOImageDownloader.mm; sourceTree = "<group>"; };
 		ACA03C6821899F0000BAA882 /* RIOCharacterPreviewViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterPreviewViewModel.m; sourceTree = "<group>"; };
 		ACA03C6921899F0000BAA882 /* RIOCharacterPreviewViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOCharacterPreviewViewModel.h; sourceTree = "<group>"; };
 		ACA03C6B2189A11B00BAA882 /* RIOCharacterPreviewSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterPreviewSectionController.h; sourceTree = "<group>"; };
-		ACA03C6C2189A11B00BAA882 /* RIOCharacterPreviewSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterPreviewSectionController.m; sourceTree = "<group>"; };
-		ACA03C6E2189A21700BAA882 /* RIOCharacterPreviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterPreviewCell.h; sourceTree = "<group>"; };
-		ACA03C6F2189A21700BAA882 /* RIOCharacterPreviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterPreviewCell.m; sourceTree = "<group>"; };
-		ACA03C712189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RIOCharacterPreviewViewModel+Layout.h"; sourceTree = "<group>"; };
-		ACA03C722189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RIOCharacterPreviewViewModel+Layout.m"; sourceTree = "<group>"; };
+		ACA03C6C2189A11B00BAA882 /* RIOCharacterPreviewSectionController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RIOCharacterPreviewSectionController.mm; sourceTree = "<group>"; };
+		ACA03C6E2189A21700BAA882 /* RIOComponentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOComponentCell.h; sourceTree = "<group>"; };
+		ACA03C6F2189A21700BAA882 /* RIOComponentCell.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RIOComponentCell.mm; sourceTree = "<group>"; };
 		ACCAEF44219786AF002F76C4 /* RIOCharacterPreviewViewModel.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOCharacterPreviewViewModel.value; sourceTree = "<group>"; };
 		ACCAEF45219786CA002F76C4 /* RIOCharacter.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOCharacter.value; sourceTree = "<group>"; };
 		ACCAEF4621979249002F76C4 /* RIOCharacterID.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOCharacterID.value; sourceTree = "<group>"; };
@@ -121,17 +121,12 @@
 		ACD2791021A3954800F60394 /* IGListKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = IGListKit.framework.dSYM; path = Carthage/Build/iOS/IGListKit.framework.dSYM; sourceTree = "<group>"; };
 		ACD2791221A3957900F60394 /* ComponentKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ComponentKit.framework; path = Carthage/Build/iOS/ComponentKit.framework; sourceTree = "<group>"; };
 		ACD2791621A395E400F60394 /* ComponentKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ComponentKit.framework.dSYM; path = Carthage/Build/iOS/ComponentKit.framework.dSYM; sourceTree = "<group>"; };
+		ACD2791C21A3969300F60394 /* RIOCharacterPreviewComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterPreviewComponent.h; sourceTree = "<group>"; };
+		ACD2791D21A3969300F60394 /* RIOCharacterPreviewComponent.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RIOCharacterPreviewComponent.mm; sourceTree = "<group>"; };
 		ACDE1ACB219B547D009D5556 /* RIOGuild.value */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RIOGuild.value; sourceTree = "<group>"; };
 		ACF60E892189991400E30606 /* RIOCharacterListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterListViewController.h; sourceTree = "<group>"; };
 		ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterListViewController.m; sourceTree = "<group>"; };
 		ACF60E8D21899A0100E30606 /* RIOMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOMacros.h; sourceTree = "<group>"; };
-		ACFF0D15219D451F008BDD02 /* RIOTextStackViewModel.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOTextStackViewModel.value; sourceTree = "<group>"; };
-		ACFF0D17219D4616008BDD02 /* RIOTextStackViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOTextStackViewModel.m; sourceTree = "<group>"; };
-		ACFF0D18219D4616008BDD02 /* RIOTextStackViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOTextStackViewModel.h; sourceTree = "<group>"; };
-		ACFF0D1A219D4654008BDD02 /* RIOTextStackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOTextStackView.h; sourceTree = "<group>"; };
-		ACFF0D1B219D4654008BDD02 /* RIOTextStackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOTextStackView.m; sourceTree = "<group>"; };
-		ACFF0D1D219D471D008BDD02 /* RIOTextStackViewModel+Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RIOTextStackViewModel+Layout.h"; sourceTree = "<group>"; };
-		ACFF0D1E219D471D008BDD02 /* RIOTextStackViewModel+Layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RIOTextStackViewModel+Layout.m"; sourceTree = "<group>"; };
 		ACFF0D22219DE0E3008BDD02 /* RIOGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOGeometry.h; sourceTree = "<group>"; };
 		ACFF0D23219DE0E3008BDD02 /* RIOGeometry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOGeometry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +187,8 @@
 				AC2EF199218D861000C92D37 /* RIOCharacterService.m */,
 				ACCAEF4B219792A6002F76C4 /* RIOCharacterCache.h */,
 				ACCAEF4C219792A6002F76C4 /* RIOCharacterCache.m */,
+				AC6D5B6421A62D4B002E9460 /* RIOImageDownloader.h */,
+				AC6D5B6521A62D4B002E9460 /* RIOImageDownloader.mm */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -241,6 +238,15 @@
 			path = RaiderIOTests;
 			sourceTree = "<group>";
 		};
+		AC6D5B6021A5F9C6002E9460 /* ComponentCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACA03C6E2189A21700BAA882 /* RIOComponentCell.h */,
+				ACA03C6F2189A21700BAA882 /* RIOComponentCell.mm */,
+			);
+			path = ComponentCell;
+			sourceTree = "<group>";
+		};
 		ACDE1ACA219B542B009D5556 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,12 +277,10 @@
 				ACA03C6921899F0000BAA882 /* RIOCharacterPreviewViewModel.h */,
 				ACA03C6821899F0000BAA882 /* RIOCharacterPreviewViewModel.m */,
 				ACCAEF44219786AF002F76C4 /* RIOCharacterPreviewViewModel.value */,
-				ACA03C712189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.h */,
-				ACA03C722189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.m */,
 				ACA03C6B2189A11B00BAA882 /* RIOCharacterPreviewSectionController.h */,
-				ACA03C6C2189A11B00BAA882 /* RIOCharacterPreviewSectionController.m */,
-				ACA03C6E2189A21700BAA882 /* RIOCharacterPreviewCell.h */,
-				ACA03C6F2189A21700BAA882 /* RIOCharacterPreviewCell.m */,
+				ACA03C6C2189A11B00BAA882 /* RIOCharacterPreviewSectionController.mm */,
+				ACD2791C21A3969300F60394 /* RIOCharacterPreviewComponent.h */,
+				ACD2791D21A3969300F60394 /* RIOCharacterPreviewComponent.mm */,
 			);
 			path = CharacterList;
 			sourceTree = "<group>";
@@ -284,28 +288,16 @@
 		ACF60E8C218999EF00E30606 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				ACFF0D25219DE35F008BDD02 /* TextStackView */,
+				AC6D5B6021A5F9C6002E9460 /* ComponentCell */,
 				ACF60E8D21899A0100E30606 /* RIOMacros.h */,
 				ACCAEF4E21979357002F76C4 /* RIOCollections.h */,
 				ACCAEF4F21979357002F76C4 /* RIOCollections.m */,
 				ACFF0D22219DE0E3008BDD02 /* RIOGeometry.h */,
 				ACFF0D23219DE0E3008BDD02 /* RIOGeometry.m */,
+				AC6D5B6121A62CC8002E9460 /* RIOUserSession.h */,
+				AC6D5B6221A62CC8002E9460 /* RIOUserSession.mm */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		ACFF0D25219DE35F008BDD02 /* TextStackView */ = {
-			isa = PBXGroup;
-			children = (
-				ACFF0D1A219D4654008BDD02 /* RIOTextStackView.h */,
-				ACFF0D1B219D4654008BDD02 /* RIOTextStackView.m */,
-				ACFF0D15219D451F008BDD02 /* RIOTextStackViewModel.value */,
-				ACFF0D18219D4616008BDD02 /* RIOTextStackViewModel.h */,
-				ACFF0D17219D4616008BDD02 /* RIOTextStackViewModel.m */,
-				ACFF0D1D219D471D008BDD02 /* RIOTextStackViewModel+Layout.h */,
-				ACFF0D1E219D471D008BDD02 /* RIOTextStackViewModel+Layout.m */,
-			);
-			path = TextStackView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,7 +385,6 @@
 			files = (
 				ACDE1ACC219B547D009D5556 /* RIOGuild.value in Resources */,
 				ACD2791721A395E400F60394 /* ComponentKit.framework.dSYM in Resources */,
-				ACFF0D16219D451F008BDD02 /* RIOTextStackViewModel.value in Resources */,
 				AC3F9F1A21882CF200679F1F /* LaunchScreen.storyboard in Resources */,
 				AC3F9F1721882CF200679F1F /* Assets.xcassets in Resources */,
 				ACCAEF4721979249002F76C4 /* RIOCharacterID.value in Resources */,
@@ -443,21 +434,20 @@
 				AC0A9AD321900965002BD60F /* RIOCharacterViewController.m in Sources */,
 				AC3F9F1D21882CF300679F1F /* main.m in Sources */,
 				ACCAEF4D219792A6002F76C4 /* RIOCharacterCache.m in Sources */,
-				ACA03C6D2189A11B00BAA882 /* RIOCharacterPreviewSectionController.m in Sources */,
+				AC6D5B6321A62CC8002E9460 /* RIOUserSession.mm in Sources */,
+				ACA03C6D2189A11B00BAA882 /* RIOCharacterPreviewSectionController.mm in Sources */,
 				ACCAEF5021979357002F76C4 /* RIOCollections.m in Sources */,
 				ACA03C6A21899F0000BAA882 /* RIOCharacterPreviewViewModel.m in Sources */,
+				ACD2791E21A3969300F60394 /* RIOCharacterPreviewComponent.mm in Sources */,
 				ACF60E8B2189991400E30606 /* RIOCharacterListViewController.m in Sources */,
-				ACFF0D1F219D471D008BDD02 /* RIOTextStackViewModel+Layout.m in Sources */,
-				ACA03C732189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.m in Sources */,
 				ACCAEF5521990925002F76C4 /* RIOMythicPlusScores.m in Sources */,
-				ACA03C702189A21700BAA882 /* RIOCharacterPreviewCell.m in Sources */,
+				AC6D5B6621A62D4B002E9460 /* RIOImageDownloader.mm in Sources */,
+				ACA03C702189A21700BAA882 /* RIOComponentCell.mm in Sources */,
 				AC3F9F0F21882CF200679F1F /* AppDelegate.m in Sources */,
 				AC2EF19F218F589100C92D37 /* RIOGuild.m in Sources */,
 				AC2EF1A0218F589100C92D37 /* RIOCharacter.m in Sources */,
 				AC2EF19A218D861000C92D37 /* RIOCharacterService.m in Sources */,
-				ACFF0D1C219D4654008BDD02 /* RIOTextStackView.m in Sources */,
 				ACFF0D24219DE0E3008BDD02 /* RIOGeometry.m in Sources */,
-				ACFF0D19219D4616008BDD02 /* RIOTextStackViewModel.m in Sources */,
 				ACCAEF4A21979270002F76C4 /* RIOCharacterID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
