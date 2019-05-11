@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AC0A9AD321900965002BD60F /* RIOCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0A9AD221900965002BD60F /* RIOCharacterViewController.m */; };
 		AC0CE031219E2FD400970B5E /* RIOMythicPlusBestRun.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0CE02F219E2FD400970B5E /* RIOMythicPlusBestRun.m */; };
+		AC16155F21A34547009770DF /* IGListKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC16155E21A34547009770DF /* IGListKit.framework.dSYM */; };
 		AC26DE2D21A34307000B17F2 /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC26DE2C21A34307000B17F2 /* IGListKit.framework */; };
 		AC2EF19A218D861000C92D37 /* RIOCharacterService.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF199218D861000C92D37 /* RIOCharacterService.m */; };
 		AC2EF19F218F589100C92D37 /* RIOGuild.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EF19C218F589000C92D37 /* RIOGuild.m */; };
@@ -28,10 +29,6 @@
 		ACCAEF5021979357002F76C4 /* RIOCollections.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF4F21979357002F76C4 /* RIOCollections.m */; };
 		ACCAEF52219908F2002F76C4 /* RIOMythicPlusScores.value in Resources */ = {isa = PBXBuildFile; fileRef = ACCAEF51219908F2002F76C4 /* RIOMythicPlusScores.value */; };
 		ACCAEF5521990925002F76C4 /* RIOMythicPlusScores.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCAEF5421990925002F76C4 /* RIOMythicPlusScores.m */; };
-		ACD2791121A3954800F60394 /* IGListKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACD2791021A3954800F60394 /* IGListKit.framework.dSYM */; };
-		ACD2791321A3957900F60394 /* ComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD2791221A3957900F60394 /* ComponentKit.framework */; };
-		ACD2791721A395E400F60394 /* ComponentKit.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = ACD2791621A395E400F60394 /* ComponentKit.framework.dSYM */; };
-		ACD2791821A395F800F60394 /* ComponentKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = ACD2791621A395E400F60394 /* ComponentKit.framework.dSYM */; };
 		ACDE1ACC219B547D009D5556 /* RIOGuild.value in Resources */ = {isa = PBXBuildFile; fileRef = ACDE1ACB219B547D009D5556 /* RIOGuild.value */; };
 		ACF60E8B2189991400E30606 /* RIOCharacterListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */; };
 		ACFF0D16219D451F008BDD02 /* RIOTextStackViewModel.value in Resources */ = {isa = PBXBuildFile; fileRef = ACFF0D15219D451F008BDD02 /* RIOTextStackViewModel.value */; };
@@ -58,8 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				ACD2791121A3954800F60394 /* IGListKit.framework.dSYM in CopyFiles */,
-				ACD2791821A395F800F60394 /* ComponentKit.framework.dSYM in CopyFiles */,
+				AC16155F21A34547009770DF /* IGListKit.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +77,7 @@
 		AC0CE02E219E2F5400970B5E /* RIOMythicPlusBestRun.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOMythicPlusBestRun.value; sourceTree = "<group>"; };
 		AC0CE02F219E2FD400970B5E /* RIOMythicPlusBestRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOMythicPlusBestRun.m; sourceTree = "<group>"; };
 		AC0CE030219E2FD400970B5E /* RIOMythicPlusBestRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOMythicPlusBestRun.h; sourceTree = "<group>"; };
+		AC16155E21A34547009770DF /* IGListKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = IGListKit.framework.dSYM; sourceTree = "<group>"; };
 		AC26DE2C21A34307000B17F2 /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		AC2EF198218D861000C92D37 /* RIOCharacterService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterService.h; sourceTree = "<group>"; };
 		AC2EF199218D861000C92D37 /* RIOCharacterService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterService.m; sourceTree = "<group>"; };
@@ -118,9 +115,6 @@
 		ACCAEF51219908F2002F76C4 /* RIOMythicPlusScores.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOMythicPlusScores.value; sourceTree = "<group>"; };
 		ACCAEF5321990925002F76C4 /* RIOMythicPlusScores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOMythicPlusScores.h; sourceTree = "<group>"; };
 		ACCAEF5421990925002F76C4 /* RIOMythicPlusScores.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOMythicPlusScores.m; sourceTree = "<group>"; };
-		ACD2791021A3954800F60394 /* IGListKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = IGListKit.framework.dSYM; path = Carthage/Build/iOS/IGListKit.framework.dSYM; sourceTree = "<group>"; };
-		ACD2791221A3957900F60394 /* ComponentKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ComponentKit.framework; path = Carthage/Build/iOS/ComponentKit.framework; sourceTree = "<group>"; };
-		ACD2791621A395E400F60394 /* ComponentKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ComponentKit.framework.dSYM; path = Carthage/Build/iOS/ComponentKit.framework.dSYM; sourceTree = "<group>"; };
 		ACDE1ACB219B547D009D5556 /* RIOGuild.value */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RIOGuild.value; sourceTree = "<group>"; };
 		ACF60E892189991400E30606 /* RIOCharacterListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterListViewController.h; sourceTree = "<group>"; };
 		ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterListViewController.m; sourceTree = "<group>"; };
@@ -142,7 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC26DE2D21A34307000B17F2 /* IGListKit.framework in Frameworks */,
-				ACD2791321A3957900F60394 /* ComponentKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,9 +152,7 @@
 		65AC241815E12F401EC8F7BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ACD2791621A395E400F60394 /* ComponentKit.framework.dSYM */,
-				ACD2791221A3957900F60394 /* ComponentKit.framework */,
-				ACD2791021A3954800F60394 /* IGListKit.framework.dSYM */,
+				AC16155E21A34547009770DF /* IGListKit.framework.dSYM */,
 				AC26DE2C21A34307000B17F2 /* IGListKit.framework */,
 			);
 			name = Frameworks;
@@ -392,7 +383,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACDE1ACC219B547D009D5556 /* RIOGuild.value in Resources */,
-				ACD2791721A395E400F60394 /* ComponentKit.framework.dSYM in Resources */,
 				ACFF0D16219D451F008BDD02 /* RIOTextStackViewModel.value in Resources */,
 				AC3F9F1A21882CF200679F1F /* LaunchScreen.storyboard in Resources */,
 				AC3F9F1721882CF200679F1F /* Assets.xcassets in Resources */,
@@ -420,13 +410,11 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/IGListKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ComponentKit.framework",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IGListKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ComponentKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
