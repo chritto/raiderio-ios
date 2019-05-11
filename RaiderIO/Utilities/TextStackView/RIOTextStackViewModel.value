@@ -1,0 +1,6 @@
+%type name=RIOTextStackViewDirection file=RIOTextStackView
+
+RIOTextStackViewModel {
+    NSArray<NSAttributedString *> *texts
+    RIOTextStackViewDirection(NSUInteger) direction
+}

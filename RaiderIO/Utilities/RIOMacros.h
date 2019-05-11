@@ -12,5 +12,3 @@
 #define RIO_INIT_UNAVAILABLE - (instancetype)init __attribute__((unavailable)); \
 + (instancetype)new __attribute__((unavailable));
 
-#define RIO_SAFE_CAST(obj, cls) [obj isKindOfClass:[cls class]] ? (cls *) obj : nil
-

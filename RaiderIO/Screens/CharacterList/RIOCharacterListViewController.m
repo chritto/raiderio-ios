@@ -16,7 +16,6 @@
 #import "RIOCharacterPreviewSectionController.h"
 #import "RIOCharacterPreviewViewModel.h"
 #import "RIOCollections.h"
-#import "RIOUserSession.h"
 
 @interface RIOCharacterListViewController () <IGListAdapterDataSource, RIOCharacterCacheListener>
 
@@ -26,14 +25,12 @@
     UICollectionView *_collectionView;
     IGListAdapter *_listAdapter;
     RIOCharacterCache *_characterCache;
-    RIOUserSession *_userSession;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
         _characterCache = [RIOCharacterCache new];
         [_characterCache addListener:self];
-        _userSession = [RIOUserSession new];
     }
     return self;
 }
@@ -44,7 +41,7 @@
     self.navigationItem.title = @"Characters";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(_didTapAdd)];
 
-    UICollectionViewFlowLayout * const layout = [UICollectionViewFlowLayout new];
+    UICollectionViewLayout * const layout = [UICollectionViewFlowLayout new];
     UICollectionView * const collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     collectionView.alwaysBounceVertical = YES;
     collectionView.backgroundColor = [UIColor whiteColor];
@@ -134,8 +131,7 @@
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object {
     if ([object isKindOfClass:[RIOCharacterPreviewViewModel class]]) {
-        return [[RIOCharacterPreviewSectionController alloc] initWithCharacterCache:_characterCache
-                                                                        userSession:_userSession];
+        return [[RIOCharacterPreviewSectionController alloc] initWithCharacterCache:_characterCache];
     } else {
         NSAssert(false, @"Unable to find a matching section controller for %@", object);
         return nil;

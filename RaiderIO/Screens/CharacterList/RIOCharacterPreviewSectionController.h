@@ -12,14 +12,12 @@
 #import "RIOMacros.h"
 
 @class RIOCharacterCache;
-@class RIOUserSession;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RIOCharacterPreviewSectionController : IGListGenericSectionController<RIOCharacterPreviewViewModel *>
 
-- (instancetype)initWithCharacterCache:(RIOCharacterCache *)characterCache
-                           userSession:(RIOUserSession *)userSession;
+- (instancetype)initWithCharacterCache:(RIOCharacterCache *)characterCache;
 
 RIO_INIT_UNAVAILABLE
 
