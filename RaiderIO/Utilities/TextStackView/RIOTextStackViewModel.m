@@ -21,14 +21,14 @@
   return self;
 }
 
-- (id)copyWithZone:(nullable NSZone *)zone
+- (id)copyWithZone:(NSZone *)zone
 {
   return self;
 }
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%@ - \n\t texts: %@; \n\t direction: %llu; \n", [super description], _texts, (unsigned long long)_direction];
+  return [NSString stringWithFormat:@"%@ - \n\t texts: %@; \n\t direction: %tu; \n", [super description], _texts, _direction];
 }
 
 - (NSUInteger)hash
@@ -52,7 +52,7 @@
 {
   if (self == object) {
     return YES;
-  } else if (object == nil || ![object isKindOfClass:[self class]]) {
+  } else if (self == nil || object == nil || ![object isKindOfClass:[self class]]) {
     return NO;
   }
   return

@@ -98,14 +98,14 @@ static NSUInteger HashCGFloat(CGFloat givenCGFloat) {
   return self;
 }
 
-- (id)copyWithZone:(nullable NSZone *)zone
+- (id)copyWithZone:(NSZone *)zone
 {
   return self;
 }
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%@ - \n\t dungeon: %@; \n\t level: %llu; \n\t score: %f; \n", [super description], _dungeon, (unsigned long long)_level, _score];
+  return [NSString stringWithFormat:@"%@ - \n\t dungeon: %@; \n\t level: %tu; \n\t score: %f; \n", [super description], _dungeon, _level, _score];
 }
 
 - (NSUInteger)hash
@@ -129,7 +129,7 @@ static NSUInteger HashCGFloat(CGFloat givenCGFloat) {
 {
   if (self == object) {
     return YES;
-  } else if (object == nil || ![object isKindOfClass:[self class]]) {
+  } else if (self == nil || object == nil || ![object isKindOfClass:[self class]]) {
     return NO;
   }
   return

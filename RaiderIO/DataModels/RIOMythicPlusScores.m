@@ -23,14 +23,14 @@
   return self;
 }
 
-- (id)copyWithZone:(nullable NSZone *)zone
+- (id)copyWithZone:(NSZone *)zone
 {
   return self;
 }
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%@ - \n\t all: %lld; \n\t dps: %lld; \n\t healer: %lld; \n\t tank: %lld; \n", [super description], (long long)_all, (long long)_dps, (long long)_healer, (long long)_tank];
+  return [NSString stringWithFormat:@"%@ - \n\t all: %zd; \n\t dps: %zd; \n\t healer: %zd; \n\t tank: %zd; \n", [super description], _all, _dps, _healer, _tank];
 }
 
 - (NSUInteger)hash
@@ -54,7 +54,7 @@
 {
   if (self == object) {
     return YES;
-  } else if (object == nil || ![object isKindOfClass:[self class]]) {
+  } else if (self == nil || object == nil || ![object isKindOfClass:[self class]]) {
     return NO;
   }
   return

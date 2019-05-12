@@ -1,22 +1,22 @@
 /**
  * This file is generated using the remodel generation script.
- * The name of the input file is RIOCharacterID.value
+ * The name of the input file is RIOCharacterHeaderViewModel.value
  */
 
 #if  ! __has_feature(objc_arc)
 #error This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
 #endif
 
-#import "RIOCharacterID.h"
+#import "RIOCharacterHeaderViewModel.h"
 
-@implementation RIOCharacterID
+@implementation RIOCharacterHeaderViewModel
 
-- (instancetype)initWithName:(NSString *)name realm:(NSString *)realm region:(NSString *)region
+- (instancetype)initWithName:(NSString *)name thumbnailURL:(NSURL *)thumbnailURL bannerURL:(NSURL *)bannerURL
 {
   if ((self = [super init])) {
     _name = [name copy];
-    _realm = [realm copy];
-    _region = [region copy];
+    _thumbnailURL = [thumbnailURL copy];
+    _bannerURL = [bannerURL copy];
   }
 
   return self;
@@ -29,12 +29,12 @@
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%@ - \n\t name: %@; \n\t realm: %@; \n\t region: %@; \n", [super description], _name, _realm, _region];
+  return [NSString stringWithFormat:@"%@ - \n\t name: %@; \n\t thumbnailURL: %@; \n\t bannerURL: %@; \n", [super description], _name, _thumbnailURL, _bannerURL];
 }
 
 - (NSUInteger)hash
 {
-  NSUInteger subhashes[] = {[_name hash], [_realm hash], [_region hash]};
+  NSUInteger subhashes[] = {[_name hash], [_thumbnailURL hash], [_bannerURL hash]};
   NSUInteger result = subhashes[0];
   for (int ii = 1; ii < 3; ++ii) {
     unsigned long long base = (((unsigned long long)result) << 32 | subhashes[ii]);
@@ -49,7 +49,7 @@
   return result;
 }
 
-- (BOOL)isEqual:(RIOCharacterID *)object
+- (BOOL)isEqual:(RIOCharacterHeaderViewModel *)object
 {
   if (self == object) {
     return YES;
@@ -58,8 +58,8 @@
   }
   return
     (_name == object->_name ? YES : [_name isEqual:object->_name]) &&
-    (_realm == object->_realm ? YES : [_realm isEqual:object->_realm]) &&
-    (_region == object->_region ? YES : [_region isEqual:object->_region]);
+    (_thumbnailURL == object->_thumbnailURL ? YES : [_thumbnailURL isEqual:object->_thumbnailURL]) &&
+    (_bannerURL == object->_bannerURL ? YES : [_bannerURL isEqual:object->_bannerURL]);
 }
 
 @end

@@ -11,12 +11,23 @@
 #import <IGListKit/IGListKit.h>
 
 #import "RIOCharacterService.h"
+#import "RIOCharacterHeaderSectionController.h"
+#import "RIOCharacterHeaderViewModel.h"
+#import "RIOCharacterHeaderViewModel+IGListDiffable.h"
+
+@interface RIOCharacterViewController ()
+<
+IGListAdapterDataSource
+>
+
+@end
 
 @implementation RIOCharacterViewController {
     RIOCharacter *_character;
     RIOCharacterService *_characterService;
 
-    UICollectionViewController *_collectionViewController;
+    UICollectionView *_collectionView;
+    IGListAdapter *_listAdapter;
 }
 
 - (instancetype)initWithCharacter:(RIOCharacter *)character {
@@ -31,14 +42,67 @@
     [super viewDidLoad];
 
     self.navigationItem.title = _character.name;
-    self.view.backgroundColor = [UIColor redColor];
 
     UICollectionViewFlowLayout * const layout = [UICollectionViewFlowLayout new];
-    _collectionViewController = [[UICollectionViewController alloc] initWithCollectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
+                                         collectionViewLayout:layout];
+    _collectionView.alwaysBounceVertical = YES;
+    _collectionView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:_collectionView];
+    
+    IGListAdapterUpdater *updater = [IGListAdapterUpdater new];
+    IGListAdapter *listAdapter = [[IGListAdapter alloc] initWithUpdater:updater viewController:self];
+    listAdapter.dataSource = self;
+    listAdapter.collectionView = _collectionView;
+    _listAdapter = listAdapter;
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    
+    _collectionView.frame = self.view.bounds;
+}
+
+#pragma mark - IGListAdapterDataSource
+
+- (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
+    RIOCharacterHeaderViewModel * const header =
+    [[RIOCharacterHeaderViewModel alloc] initWithName:_character.name
+                                         thumbnailURL:_character.thumbnailURL
+                                            bannerURL:bannerURLForFaction(_character.faction)];
+    
+    return @[header];
+}
+
+- (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter
+              sectionControllerForObject:(id)object {
+    if ([object isKindOfClass:RIOCharacterHeaderViewModel.class]) {
+        return [RIOCharacterHeaderSectionController new];
+    }
+    NSAssert(NO, @"Unexpected view model");
+    return nil;
+}
+
+- (nullable UIView *)emptyViewForListAdapter:(IGListAdapter *)listAdapter {
+    UILabel * const label = [UILabel new];
+    label.backgroundColor = [UIColor whiteColor];
+    label.text = @"Character not found.";
+    label.textAlignment = NSTextAlignmentCenter;
+    return label;
+}
+
+#pragma mark - Helpers
+
+// FIXME: Migrate faction to an enum
+static NSURL *bannerURLForFaction(NSString *faction) {
+    if ([faction isEqualToString:@"horde"]) {
+        return [NSURL URLWithString:@"https://cdnassets.raider.io/images/profile/masthead_backdrops/v2/hordebanner1.jpg"];
+    } else if ([faction isEqualToString:@"alliance"]) {
+        return [NSURL URLWithString:@"https://cdnassets.raider.io/images/profile/masthead_backdrops/v2/alliancebanner1.jpg"];
+    } else {
+        NSCAssert(NO, @"Unexpected faction");
+        return nil;
+    }
 }
 
 @end

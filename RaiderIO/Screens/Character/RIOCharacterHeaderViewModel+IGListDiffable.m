@@ -1,16 +1,14 @@
 //
-//  RIOCharacterPreviewViewModel+IGListDiffable.m
+//  RIOCharacterHeaderViewModel+IGListDiffable.m
 //  RaiderIO
 //
-//  Created by Chris McGrath on 5/11/19.
+//  Created by Chris McGrath on 5/12/19.
 //  Copyright © 2019 Chris McGrath. All rights reserved.
 //
 
-#import "RIOCharacterPreviewViewModel+IGListDiffable.h"
+#import "RIOCharacterHeaderViewModel+IGListDiffable.h"
 
-#import <IGListKit/IGListKit.h>
-
-@implementation RIOCharacterPreviewViewModel (IGListDiffable)
+@implementation RIOCharacterHeaderViewModel (IGListDiffable)
 
 - (id<NSObject>)diffIdentifier {
     return self;

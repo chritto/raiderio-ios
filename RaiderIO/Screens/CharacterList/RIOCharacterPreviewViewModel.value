@@ -1,4 +1,4 @@
-RIOCharacterPreviewViewModel includes(IGListDiffable) {
+RIOCharacterPreviewViewModel {
     RIOCharacterID *characterID
     BOOL loading
     %nullable NSString *guild

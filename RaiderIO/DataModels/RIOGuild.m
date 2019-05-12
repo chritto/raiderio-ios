@@ -21,7 +21,7 @@
   return self;
 }
 
-- (id)copyWithZone:(nullable NSZone *)zone
+- (id)copyWithZone:(NSZone *)zone
 {
   return self;
 }
@@ -52,7 +52,7 @@
 {
   if (self == object) {
     return YES;
-  } else if (object == nil || ![object isKindOfClass:[self class]]) {
+  } else if (self == nil || object == nil || ![object isKindOfClass:[self class]]) {
     return NO;
   }
   return

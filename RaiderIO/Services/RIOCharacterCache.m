@@ -31,11 +31,12 @@
 }
 
 - (NSArray<RIOCharacterID *> *)favoriteCharacterIdentifiers {
-    return @[ [[RIOCharacterID alloc] initWithName:@"Sevv" realm:@"Ner'zhul" region:@"us"],
-              [[RIOCharacterID alloc] initWithName:@"Joyzaiga" realm:@"Ner'zhul" region:@"us"],
-              [[RIOCharacterID alloc] initWithName:@"Antizero" realm:@"Ner'zhul" region:@"us"],
+    return @[ [[RIOCharacterID alloc] initWithName:@"Arastalon" realm:@"Ner'zhul" region:@"us"],
+              [[RIOCharacterID alloc] initWithName:@"Cadehunter" realm:@"Ner'zhul" region:@"us"],
               [[RIOCharacterID alloc] initWithName:@"Oenanthe" realm:@"Ner'zhul" region:@"us"],
-              [[RIOCharacterID alloc] initWithName:@"Havocguy" realm:@"Ner'zhul" region:@"us"]];
+              [[RIOCharacterID alloc] initWithName:@"Havocguy" realm:@"Ner'zhul" region:@"us"],
+              [[RIOCharacterID alloc] initWithName:@"Joyzaiga" realm:@"Ner'zhul" region:@"us"],
+              [[RIOCharacterID alloc] initWithName:@"Kaesti" realm:@"Ner'zhul" region:@"us"]];
 }
 
 - (RIOCharacter *)characterWithID:(RIOCharacterID *)characterID {

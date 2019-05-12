@@ -44,6 +44,7 @@
         RIOCharacterViewController * const characterViewController = [[RIOCharacterViewController alloc] initWithCharacter:character];
         [self.viewController.navigationController pushViewController:characterViewController animated:YES];
     }
+    [self.collectionContext deselectItemAtIndex:index sectionController:self animated:YES];
 }
 
 @end

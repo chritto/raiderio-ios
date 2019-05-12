@@ -23,15 +23,11 @@
 @property (nonatomic, readonly, copy) NSString *region;
 @property (nonatomic, readonly, copy) NSString *realm;
 @property (nonatomic, readonly, copy) NSURL *profileURL;
-@property (nonatomic, readonly, copy) RIOGuild *guild;
+@property (nonatomic, readonly, copy, nullable) RIOGuild *guild;
 @property (nonatomic, readonly, copy) RIOMythicPlusScores *mythicPlusScores;
 @property (nonatomic, readonly, copy) NSArray<RIOMythicPlusBestRun *> *mythicPlusBestRuns;
 
-+ (instancetype)new NS_UNAVAILABLE;
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (instancetype)initWithName:(NSString *)name race:(NSString *)race characterClass:(NSString *)characterClass activeSpecName:(NSString *)activeSpecName activeSpecRole:(NSString *)activeSpecRole gender:(NSString *)gender faction:(NSString *)faction achievementPoints:(NSInteger)achievementPoints honorableKills:(NSInteger)honorableKills thumbnailURL:(NSURL *)thumbnailURL region:(NSString *)region realm:(NSString *)realm profileURL:(NSURL *)profileURL guild:(RIOGuild *)guild mythicPlusScores:(RIOMythicPlusScores *)mythicPlusScores mythicPlusBestRuns:(NSArray<RIOMythicPlusBestRun *> *)mythicPlusBestRuns NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithName:(NSString *)name race:(NSString *)race characterClass:(NSString *)characterClass activeSpecName:(NSString *)activeSpecName activeSpecRole:(NSString *)activeSpecRole gender:(NSString *)gender faction:(NSString *)faction achievementPoints:(NSInteger)achievementPoints honorableKills:(NSInteger)honorableKills thumbnailURL:(NSURL *)thumbnailURL region:(NSString *)region realm:(NSString *)realm profileURL:(NSURL *)profileURL guild:(nullable RIOGuild *)guild mythicPlusScores:(RIOMythicPlusScores *)mythicPlusScores mythicPlusBestRuns:(NSArray<RIOMythicPlusBestRun *> *)mythicPlusBestRuns;
 
 @end
 

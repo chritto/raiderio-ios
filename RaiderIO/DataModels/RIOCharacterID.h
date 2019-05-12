@@ -11,11 +11,7 @@
 @property (nonatomic, readonly, copy) NSString *realm;
 @property (nonatomic, readonly, copy) NSString *region;
 
-+ (instancetype)new NS_UNAVAILABLE;
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (instancetype)initWithName:(NSString *)name realm:(NSString *)realm region:(NSString *)region NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithName:(NSString *)name realm:(NSString *)realm region:(NSString *)region;
 
 @end
 

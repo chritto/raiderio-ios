@@ -17,7 +17,9 @@
 #import "RIOCharacterPreviewViewModel.h"
 #import "RIOCollections.h"
 
-@interface RIOCharacterListViewController () <IGListAdapterDataSource, RIOCharacterCacheListener>
+@interface RIOCharacterListViewController () <
+IGListAdapterDataSource,
+RIOCharacterCacheListener>
 
 @end
 

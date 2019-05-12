@@ -12,11 +12,7 @@
 @property (nonatomic, readonly) NSInteger healer;
 @property (nonatomic, readonly) NSInteger tank;
 
-+ (instancetype)new NS_UNAVAILABLE;
-
-- (instancetype)init NS_UNAVAILABLE;
-
-- (instancetype)initWithAll:(NSInteger)all dps:(NSInteger)dps healer:(NSInteger)healer tank:(NSInteger)tank NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithAll:(NSInteger)all dps:(NSInteger)dps healer:(NSInteger)healer tank:(NSInteger)tank;
 
 @end
 

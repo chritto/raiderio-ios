@@ -38,7 +38,8 @@ static NSString * const baseURLString = @"https://raider.io/api/v1/characters/pr
                                           : characterFromDictionary([NSJSONSerialization JSONObjectWithData:data
                                                                                                     options:NSJSONReadingAllowFragments
                                                                                                       error:nil]));
-        dispatch_async(dispatch_get_main_queue(), ^{
+        const CGFloat delayInSeconds = arc4random_uniform(1000) / 1000.0;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSLog(@"Loaded details for %@-%@", characterID.name, characterID.realm);
             completion(character);
         });

@@ -24,11 +24,11 @@
 - (RIOTextStackViewModel *)textStackViewModel {
     NSDictionary<NSAttributedStringKey, id> *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:17]};
 
-    NSArray<NSAttributedString *> * const texts
-    = @[ [[NSAttributedString alloc] initWithString:self.characterID.name attributes:attributes],
-         [[NSAttributedString alloc] initWithString:self.guild attributes:attributes],
-         [[NSAttributedString alloc] initWithString:self.characterID.realm attributes:attributes]
-         ];
+    NSArray<NSAttributedString *> * const texts =
+    @[ [[NSAttributedString alloc] initWithString:self.characterID.name attributes:attributes],
+       [[NSAttributedString alloc] initWithString:(self.guild ?: @"No guild") attributes:attributes],
+       [[NSAttributedString alloc] initWithString:self.characterID.realm attributes:attributes]
+       ];
 
     return [[RIOTextStackViewModel alloc] initWithTexts:texts direction:RIOTextStackDirectionVertical];
 }
@@ -38,11 +38,11 @@
 }
 
 - (UIEdgeInsets)insets {
-    return UIEdgeInsetsMake(8, 8, 0, 8);
+    return UIEdgeInsetsMake(6, 12, 6, 12);
 }
 
 - (CGFloat)horizontalPadding {
-    return 8;
+    return 12;
 }
 
 - (UIFont *)font {

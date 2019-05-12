@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36480A532287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.m in Sources */ = {isa = PBXBuildFile; fileRef = 36480A522287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.m */; };
+		36BF9AA822889AE20009870E /* RIOCharacterHeaderSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BF9AA722889AE20009870E /* RIOCharacterHeaderSectionController.m */; };
+		36BF9AAD22889C150009870E /* RIOCharacterHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BF9AAC22889C150009870E /* RIOCharacterHeaderViewModel.m */; };
+		36BF9AB022889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BF9AAF22889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.m */; };
+		36BF9AB322889F4B0009870E /* RIOCharacterHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BF9AB222889F4B0009870E /* RIOCharacterHeaderCell.m */; };
+		36BF9AB62288AC7D0009870E /* UIView+Framing.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BF9AB52288AC7D0009870E /* UIView+Framing.m */; };
 		AC0A9AD321900965002BD60F /* RIOCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0A9AD221900965002BD60F /* RIOCharacterViewController.m */; };
 		AC0CE031219E2FD400970B5E /* RIOMythicPlusBestRun.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0CE02F219E2FD400970B5E /* RIOMythicPlusBestRun.m */; };
 		AC16155F21A34547009770DF /* IGListKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = AC16155E21A34547009770DF /* IGListKit.framework.dSYM */; };
@@ -72,12 +78,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36480A512287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RIOCharacterPreviewViewModel+IGListDiffable.h"; sourceTree = "<group>"; };
+		36480A522287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RIOCharacterPreviewViewModel+IGListDiffable.m"; sourceTree = "<group>"; };
+		36BF9AA622889AE20009870E /* RIOCharacterHeaderSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterHeaderSectionController.h; sourceTree = "<group>"; };
+		36BF9AA722889AE20009870E /* RIOCharacterHeaderSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterHeaderSectionController.m; sourceTree = "<group>"; };
+		36BF9AA922889B330009870E /* RIOCharacterHeaderViewModel.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOCharacterHeaderViewModel.value; sourceTree = "<group>"; };
+		36BF9AAB22889C150009870E /* RIOCharacterHeaderViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOCharacterHeaderViewModel.h; sourceTree = "<group>"; };
+		36BF9AAC22889C150009870E /* RIOCharacterHeaderViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterHeaderViewModel.m; sourceTree = "<group>"; };
+		36BF9AAE22889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RIOCharacterHeaderViewModel+IGListDiffable.h"; sourceTree = "<group>"; };
+		36BF9AAF22889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RIOCharacterHeaderViewModel+IGListDiffable.m"; sourceTree = "<group>"; };
+		36BF9AB122889F4B0009870E /* RIOCharacterHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterHeaderCell.h; sourceTree = "<group>"; };
+		36BF9AB222889F4B0009870E /* RIOCharacterHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterHeaderCell.m; sourceTree = "<group>"; };
+		36BF9AB42288AC7D0009870E /* UIView+Framing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Framing.h"; sourceTree = "<group>"; };
+		36BF9AB52288AC7D0009870E /* UIView+Framing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Framing.m"; sourceTree = "<group>"; };
 		AC0A9AD121900965002BD60F /* RIOCharacterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterViewController.h; sourceTree = "<group>"; };
 		AC0A9AD221900965002BD60F /* RIOCharacterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterViewController.m; sourceTree = "<group>"; };
 		AC0CE02E219E2F5400970B5E /* RIOMythicPlusBestRun.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIOMythicPlusBestRun.value; sourceTree = "<group>"; };
 		AC0CE02F219E2FD400970B5E /* RIOMythicPlusBestRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIOMythicPlusBestRun.m; sourceTree = "<group>"; };
 		AC0CE030219E2FD400970B5E /* RIOMythicPlusBestRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIOMythicPlusBestRun.h; sourceTree = "<group>"; };
-		AC16155E21A34547009770DF /* IGListKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = IGListKit.framework.dSYM; sourceTree = "<group>"; };
+		AC16155E21A34547009770DF /* IGListKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = IGListKit.framework.dSYM; path = Carthage/Build/iOS/IGListKit.framework.dSYM; sourceTree = "<group>"; };
 		AC26DE2C21A34307000B17F2 /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		AC2EF198218D861000C92D37 /* RIOCharacterService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterService.h; sourceTree = "<group>"; };
 		AC2EF199218D861000C92D37 /* RIOCharacterService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIOCharacterService.m; sourceTree = "<group>"; };
@@ -163,6 +182,15 @@
 			children = (
 				AC0A9AD121900965002BD60F /* RIOCharacterViewController.h */,
 				AC0A9AD221900965002BD60F /* RIOCharacterViewController.m */,
+				36BF9AA922889B330009870E /* RIOCharacterHeaderViewModel.value */,
+				36BF9AAB22889C150009870E /* RIOCharacterHeaderViewModel.h */,
+				36BF9AAC22889C150009870E /* RIOCharacterHeaderViewModel.m */,
+				36BF9AAE22889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.h */,
+				36BF9AAF22889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.m */,
+				36BF9AA622889AE20009870E /* RIOCharacterHeaderSectionController.h */,
+				36BF9AA722889AE20009870E /* RIOCharacterHeaderSectionController.m */,
+				36BF9AB122889F4B0009870E /* RIOCharacterHeaderCell.h */,
+				36BF9AB222889F4B0009870E /* RIOCharacterHeaderCell.m */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -264,6 +292,8 @@
 				ACCAEF44219786AF002F76C4 /* RIOCharacterPreviewViewModel.value */,
 				ACA03C712189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.h */,
 				ACA03C722189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.m */,
+				36480A512287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.h */,
+				36480A522287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.m */,
 				ACA03C6B2189A11B00BAA882 /* RIOCharacterPreviewSectionController.h */,
 				ACA03C6C2189A11B00BAA882 /* RIOCharacterPreviewSectionController.m */,
 				ACA03C6E2189A21700BAA882 /* RIOCharacterPreviewCell.h */,
@@ -281,6 +311,8 @@
 				ACCAEF4F21979357002F76C4 /* RIOCollections.m */,
 				ACFF0D22219DE0E3008BDD02 /* RIOGeometry.h */,
 				ACFF0D23219DE0E3008BDD02 /* RIOGeometry.m */,
+				36BF9AB42288AC7D0009870E /* UIView+Framing.h */,
+				36BF9AB52288AC7D0009870E /* UIView+Framing.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -351,6 +383,7 @@
 				TargetAttributes = {
 					AC3F9F0921882CF200679F1F = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
 					};
 					AC3F9F2121882CF300679F1F = {
 						CreatedOnToolsVersion = 10.0;
@@ -429,24 +462,30 @@
 			files = (
 				AC0CE031219E2FD400970B5E /* RIOMythicPlusBestRun.m in Sources */,
 				AC0A9AD321900965002BD60F /* RIOCharacterViewController.m in Sources */,
+				36BF9AAD22889C150009870E /* RIOCharacterHeaderViewModel.m in Sources */,
 				AC3F9F1D21882CF300679F1F /* main.m in Sources */,
 				ACCAEF4D219792A6002F76C4 /* RIOCharacterCache.m in Sources */,
 				ACA03C6D2189A11B00BAA882 /* RIOCharacterPreviewSectionController.m in Sources */,
 				ACCAEF5021979357002F76C4 /* RIOCollections.m in Sources */,
 				ACA03C6A21899F0000BAA882 /* RIOCharacterPreviewViewModel.m in Sources */,
 				ACF60E8B2189991400E30606 /* RIOCharacterListViewController.m in Sources */,
+				36BF9AB322889F4B0009870E /* RIOCharacterHeaderCell.m in Sources */,
 				ACFF0D1F219D471D008BDD02 /* RIOTextStackViewModel+Layout.m in Sources */,
 				ACA03C732189A2A900BAA882 /* RIOCharacterPreviewViewModel+Layout.m in Sources */,
+				36480A532287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.m in Sources */,
 				ACCAEF5521990925002F76C4 /* RIOMythicPlusScores.m in Sources */,
 				ACA03C702189A21700BAA882 /* RIOCharacterPreviewCell.m in Sources */,
 				AC3F9F0F21882CF200679F1F /* AppDelegate.m in Sources */,
 				AC2EF19F218F589100C92D37 /* RIOGuild.m in Sources */,
+				36BF9AA822889AE20009870E /* RIOCharacterHeaderSectionController.m in Sources */,
 				AC2EF1A0218F589100C92D37 /* RIOCharacter.m in Sources */,
 				AC2EF19A218D861000C92D37 /* RIOCharacterService.m in Sources */,
 				ACFF0D1C219D4654008BDD02 /* RIOTextStackView.m in Sources */,
+				36BF9AB62288AC7D0009870E /* UIView+Framing.m in Sources */,
 				ACFF0D24219DE0E3008BDD02 /* RIOGeometry.m in Sources */,
 				ACFF0D19219D4616008BDD02 /* RIOTextStackViewModel.m in Sources */,
 				ACCAEF4A21979270002F76C4 /* RIOCharacterID.m in Sources */,
+				36BF9AB022889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +635,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -608,6 +648,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chritto.RaiderIO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -616,6 +658,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -628,6 +671,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.chritto.RaiderIO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

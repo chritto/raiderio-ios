@@ -24,7 +24,7 @@
   return self;
 }
 
-- (id)copyWithZone:(nullable NSZone *)zone
+- (id)copyWithZone:(NSZone *)zone
 {
   return self;
 }
@@ -32,11 +32,6 @@
 - (NSString *)description
 {
   return [NSString stringWithFormat:@"%@ - \n\t characterID: %@; \n\t loading: %@; \n\t guild: %@; \n\t thumbnailURL: %@; \n\t score: %@; \n", [super description], _characterID, _loading ? @"YES" : @"NO", _guild, _thumbnailURL, _score];
-}
-
-- (id<NSObject>)diffIdentifier
-{
-  return self;
 }
 
 - (NSUInteger)hash
@@ -60,7 +55,7 @@
 {
   if (self == object) {
     return YES;
-  } else if (object == nil || ![object isKindOfClass:[self class]]) {
+  } else if (self == nil || object == nil || ![object isKindOfClass:[self class]]) {
     return NO;
   }
   return
@@ -69,11 +64,6 @@
     (_guild == object->_guild ? YES : [_guild isEqual:object->_guild]) &&
     (_thumbnailURL == object->_thumbnailURL ? YES : [_thumbnailURL isEqual:object->_thumbnailURL]) &&
     (_score == object->_score ? YES : [_score isEqual:object->_score]);
-}
-
-- (BOOL)isEqualToDiffableObject:(nullable id)object
-{
-  return [self isEqual:object];
 }
 
 @end

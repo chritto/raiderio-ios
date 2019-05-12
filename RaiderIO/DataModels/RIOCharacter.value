@@ -14,7 +14,7 @@ RIOCharacter {
     NSString *region
     NSString *realm
     NSURL *profileURL
-    RIOGuild *guild
+    %nullable RIOGuild *guild
     RIOMythicPlusScores *mythicPlusScores
     NSArray<RIOMythicPlusBestRun *> *mythicPlusBestRuns
 }

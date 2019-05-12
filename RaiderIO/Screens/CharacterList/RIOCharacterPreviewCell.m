@@ -31,17 +31,24 @@
 
         _textStackView = [RIOTextStackView new];
         [self.contentView addSubview:_textStackView];
-
+        
         _scoreLabel = [UILabel new];
         _scoreLabel.font = _viewModel.font;
         [self.contentView addSubview:_scoreLabel];
 
         _thumbnailView = [UIImageView new];
+        _thumbnailView.layer.masksToBounds = YES;
         [self.contentView addSubview:_thumbnailView];
 
         _activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         _activityIndicatorView.hidesWhenStopped = YES;
         [self.contentView addSubview:_activityIndicatorView];
+        
+        self.selectedBackgroundView = ({
+            UIView * const backgroundView = [UIView new];
+            backgroundView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
+            backgroundView;
+        });
     }
     return self;
 }
@@ -79,6 +86,7 @@
     CGFloat const xPos = CGRectGetMaxX(thumbnailFrame) + horizontalPadding;
     _textStackView.frame = CGRectMake(xPos, yPos, textStackSize.width, textStackSize.height);
     _thumbnailView.frame = thumbnailFrame;
+    _thumbnailView.layer.cornerRadius = thumbnailFrame.size.width/2;
     _scoreLabel.frame = CGRectMake(maxX + horizontalPadding,
                                    CGRectGetHeight(self.contentView.frame)/2.0 - scoreSize.height/2,
                                    scoreSize.width,

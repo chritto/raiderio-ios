@@ -11,7 +11,7 @@
 
 @implementation RIOCharacter
 
-- (instancetype)initWithName:(NSString *)name race:(NSString *)race characterClass:(NSString *)characterClass activeSpecName:(NSString *)activeSpecName activeSpecRole:(NSString *)activeSpecRole gender:(NSString *)gender faction:(NSString *)faction achievementPoints:(NSInteger)achievementPoints honorableKills:(NSInteger)honorableKills thumbnailURL:(NSURL *)thumbnailURL region:(NSString *)region realm:(NSString *)realm profileURL:(NSURL *)profileURL guild:(RIOGuild *)guild mythicPlusScores:(RIOMythicPlusScores *)mythicPlusScores mythicPlusBestRuns:(NSArray<RIOMythicPlusBestRun *> *)mythicPlusBestRuns
+- (instancetype)initWithName:(NSString *)name race:(NSString *)race characterClass:(NSString *)characterClass activeSpecName:(NSString *)activeSpecName activeSpecRole:(NSString *)activeSpecRole gender:(NSString *)gender faction:(NSString *)faction achievementPoints:(NSInteger)achievementPoints honorableKills:(NSInteger)honorableKills thumbnailURL:(NSURL *)thumbnailURL region:(NSString *)region realm:(NSString *)realm profileURL:(NSURL *)profileURL guild:(nullable RIOGuild *)guild mythicPlusScores:(RIOMythicPlusScores *)mythicPlusScores mythicPlusBestRuns:(NSArray<RIOMythicPlusBestRun *> *)mythicPlusBestRuns
 {
   if ((self = [super init])) {
     _name = [name copy];
@@ -35,14 +35,14 @@
   return self;
 }
 
-- (id)copyWithZone:(nullable NSZone *)zone
+- (id)copyWithZone:(NSZone *)zone
 {
   return self;
 }
 
 - (NSString *)description
 {
-  return [NSString stringWithFormat:@"%@ - \n\t name: %@; \n\t race: %@; \n\t characterClass: %@; \n\t activeSpecName: %@; \n\t activeSpecRole: %@; \n\t gender: %@; \n\t faction: %@; \n\t achievementPoints: %lld; \n\t honorableKills: %lld; \n\t thumbnailURL: %@; \n\t region: %@; \n\t realm: %@; \n\t profileURL: %@; \n\t guild: %@; \n\t mythicPlusScores: %@; \n\t mythicPlusBestRuns: %@; \n", [super description], _name, _race, _characterClass, _activeSpecName, _activeSpecRole, _gender, _faction, (long long)_achievementPoints, (long long)_honorableKills, _thumbnailURL, _region, _realm, _profileURL, _guild, _mythicPlusScores, _mythicPlusBestRuns];
+  return [NSString stringWithFormat:@"%@ - \n\t name: %@; \n\t race: %@; \n\t characterClass: %@; \n\t activeSpecName: %@; \n\t activeSpecRole: %@; \n\t gender: %@; \n\t faction: %@; \n\t achievementPoints: %zd; \n\t honorableKills: %zd; \n\t thumbnailURL: %@; \n\t region: %@; \n\t realm: %@; \n\t profileURL: %@; \n\t guild: %@; \n\t mythicPlusScores: %@; \n\t mythicPlusBestRuns: %@; \n", [super description], _name, _race, _characterClass, _activeSpecName, _activeSpecRole, _gender, _faction, _achievementPoints, _honorableKills, _thumbnailURL, _region, _realm, _profileURL, _guild, _mythicPlusScores, _mythicPlusBestRuns];
 }
 
 - (NSUInteger)hash
@@ -66,7 +66,7 @@
 {
   if (self == object) {
     return YES;
-  } else if (object == nil || ![object isKindOfClass:[self class]]) {
+  } else if (self == nil || object == nil || ![object isKindOfClass:[self class]]) {
     return NO;
   }
   return
