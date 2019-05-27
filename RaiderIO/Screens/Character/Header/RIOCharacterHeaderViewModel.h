@@ -10,8 +10,9 @@
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSURL *thumbnailURL;
 @property (nonatomic, readonly, copy) NSURL *bannerURL;
+@property (nonatomic, readonly) NSInteger score;
 
-- (instancetype)initWithName:(NSString *)name thumbnailURL:(NSURL *)thumbnailURL bannerURL:(NSURL *)bannerURL;
+- (instancetype)initWithName:(NSString *)name thumbnailURL:(NSURL *)thumbnailURL bannerURL:(NSURL *)bannerURL score:(NSInteger)score;
 
 @end
 

@@ -1,0 +1,21 @@
+//
+//  RIODungeonCell.h
+//  RaiderIO
+//
+//  Created by Chris McGrath on 5/26/19.
+//  Copyright © 2019 Chris McGrath. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@class RIODungeonViewModel;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface RIODungeonCell : UICollectionViewCell
+
+- (void)configureWithViewModel:(RIODungeonViewModel *)viewModel;
+
+@end
+
+NS_ASSUME_NONNULL_END

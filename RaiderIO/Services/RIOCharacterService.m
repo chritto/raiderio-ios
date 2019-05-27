@@ -126,9 +126,13 @@ NSArray<RIOMythicPlusBestRun *> *mythicPlusBestRunsFromDictionary(NSArray<NSDict
 
 RIOMythicPlusBestRun *mythicPlusBestRunFromDictionary(NSDictionary *response) {
     NSString * const dungeon = response[@"dungeon"];
-    const NSUInteger level = [response[@"mythic_level"] unsignedIntegerValue];
-    const CGFloat score = [response[@"score"] doubleValue];
-    return [[RIOMythicPlusBestRun alloc] initWithDungeon:dungeon level:level score:score];
+    const NSUInteger level = [response[@"mythic_level"] integerValue];
+    const NSInteger score = [response[@"score"] doubleValue];
+    const NSInteger upgrades = [response[@"num_keystone_upgrades"] integerValue];
+    return [[RIOMythicPlusBestRun alloc] initWithDungeon:dungeon
+                                                   level:level
+                                                   score:score
+                                                upgrades:upgrades];
 }
 
 @end

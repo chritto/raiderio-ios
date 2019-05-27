@@ -14,6 +14,8 @@
 #import "RIOCharacterHeaderSectionController.h"
 #import "RIOCharacterHeaderViewModel.h"
 #import "RIOCharacterHeaderViewModel+IGListDiffable.h"
+#import "RIODungeonViewModel.h"
+#import "RIODungeonSectionController.h"
 
 @interface RIOCharacterViewController ()
 <
@@ -69,15 +71,24 @@ IGListAdapterDataSource
     RIOCharacterHeaderViewModel * const header =
     [[RIOCharacterHeaderViewModel alloc] initWithName:_character.name
                                          thumbnailURL:_character.thumbnailURL
-                                            bannerURL:bannerURLForFaction(_character.faction)];
+                                            bannerURL:bannerURLForFaction(_character.faction)
+                                                score:_character.mythicPlusScores.all];
     
-    return @[header];
+    NSMutableArray<RIODungeonViewModel *> * const dungeons = [NSMutableArray array];
+    for (RIOMythicPlusBestRun * const bestRun in _character.mythicPlusBestRuns) {
+        RIODungeonViewModel * const dungeonViewModel = [[RIODungeonViewModel alloc] initWithBestRun:bestRun];
+        [dungeons addObject:dungeonViewModel];
+    }
+    
+    return [[@[] arrayByAddingObject:header] arrayByAddingObjectsFromArray:dungeons];
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter
               sectionControllerForObject:(id)object {
     if ([object isKindOfClass:RIOCharacterHeaderViewModel.class]) {
         return [RIOCharacterHeaderSectionController new];
+    } else if ([object isKindOfClass:RIODungeonViewModel.class]) {
+        return [RIODungeonSectionController new];
     }
     NSAssert(NO, @"Unexpected view model");
     return nil;

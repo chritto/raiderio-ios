@@ -1,5 +1,6 @@
 RIOMythicPlusBestRun {
     NSString *dungeon
-    NSUInteger level
-    CGFloat score
+    NSInteger level
+    NSInteger score
+    NSInteger upgrades
 }

@@ -4,15 +4,15 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CGBase.h>
 
 @interface RIOMythicPlusBestRun : NSObject <NSCopying>
 
 @property (nonatomic, readonly, copy) NSString *dungeon;
-@property (nonatomic, readonly) NSUInteger level;
-@property (nonatomic, readonly) CGFloat score;
+@property (nonatomic, readonly) NSInteger level;
+@property (nonatomic, readonly) NSInteger score;
+@property (nonatomic, readonly) NSInteger upgrades;
 
-- (instancetype)initWithDungeon:(NSString *)dungeon level:(NSUInteger)level score:(CGFloat)score;
+- (instancetype)initWithDungeon:(NSString *)dungeon level:(NSInteger)level score:(NSInteger)score upgrades:(NSInteger)upgrades;
 
 @end
 

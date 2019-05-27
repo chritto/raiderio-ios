@@ -2,4 +2,5 @@ RIOCharacterHeaderViewModel {
     NSString *name
     NSURL *thumbnailURL
     NSURL *bannerURL
+    NSInteger score
 }

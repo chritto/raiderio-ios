@@ -19,6 +19,7 @@
     UIImageView *_bannerView;
     UIImageView *_thumbnailView;
     UILabel *_nameLabel;
+    UILabel *_scoreLabel;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -37,12 +38,17 @@
         _nameLabel = [UILabel new];
         _nameLabel.textColor = [UIColor whiteColor];
         [self.contentView addSubview:_nameLabel];
+        
+        _scoreLabel = [UILabel new];
+        _scoreLabel.textColor = [UIColor whiteColor];
+        [self.contentView addSubview:_scoreLabel];
     }
     return self;
 }
 
 - (void)layoutSubviews {
-    const CGPoint paddingTranslation = CGPointMake(12, 0);
+    const CGFloat padding = 12;
+    const CGPoint paddingTranslation = CGPointMake(padding, 0);
     const CGFloat thumbnailSideLen = CGRectGetHeight(self.bounds)/2;
     
     [_thumbnailView setPosition:CGPointTranslate(CGRectGetCLPoint(self.bounds),
@@ -58,14 +64,19 @@
                                              paddingTranslation)
                        size:labelSize
                 anchorPoint:RIOAnchorPointCenterLeft];
+    
+    [_scoreLabel setPosition:CGPointTranslate(CGRectGetCRPoint(self.bounds),
+                                              CGPointMake(-padding, 0))
+                        size:[_scoreLabel sizeThatFits:self.bounds.size]
+                 anchorPoint:RIOAnchorPointCenterRight];
 }
 
 - (void)configureWithViewModel:(RIOCharacterHeaderViewModel *)viewModel {
+    _nameLabel.text = viewModel.name;
+    _scoreLabel.text = [NSString stringWithFormat:@"%@", @(viewModel.score)];
     [_service fetchThumbnailWithURL:viewModel.thumbnailURL completion:^(UIImage * _Nullable image) {
         self->_thumbnailView.image = image;
     }];
-    _nameLabel.text = viewModel.name;
-    
     [_service fetchThumbnailWithURL:viewModel.bannerURL completion:^(UIImage * _Nullable image) {
         self->_bannerView.image = image;
     }];

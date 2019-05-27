@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36475B6E229B6AB300B582F9 /* RIODungeonViewModel.value in Resources */ = {isa = PBXBuildFile; fileRef = 36475B6D229B6AB300B582F9 /* RIODungeonViewModel.value */; };
+		36475B71229B6AE900B582F9 /* RIODungeonViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36475B70229B6AE900B582F9 /* RIODungeonViewModel.m */; };
+		36475B74229B6B0E00B582F9 /* RIODungeonSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36475B73229B6B0E00B582F9 /* RIODungeonSectionController.m */; };
+		36475B77229B6B2700B582F9 /* RIODungeonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36475B76229B6B2700B582F9 /* RIODungeonCell.m */; };
+		36475B7A229B963C00B582F9 /* RIODungeonViewModel+IGListDiffable.m in Sources */ = {isa = PBXBuildFile; fileRef = 36475B79229B963C00B582F9 /* RIODungeonViewModel+IGListDiffable.m */; };
 		36480A532287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.m in Sources */ = {isa = PBXBuildFile; fileRef = 36480A522287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.m */; };
 		36BF9AA822889AE20009870E /* RIOCharacterHeaderSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BF9AA722889AE20009870E /* RIOCharacterHeaderSectionController.m */; };
 		36BF9AAD22889C150009870E /* RIOCharacterHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BF9AAC22889C150009870E /* RIOCharacterHeaderViewModel.m */; };
@@ -78,6 +83,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36475B6D229B6AB300B582F9 /* RIODungeonViewModel.value */ = {isa = PBXFileReference; lastKnownFileType = text; path = RIODungeonViewModel.value; sourceTree = "<group>"; };
+		36475B6F229B6AE800B582F9 /* RIODungeonViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RIODungeonViewModel.h; sourceTree = "<group>"; };
+		36475B70229B6AE900B582F9 /* RIODungeonViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RIODungeonViewModel.m; sourceTree = "<group>"; };
+		36475B72229B6B0E00B582F9 /* RIODungeonSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIODungeonSectionController.h; sourceTree = "<group>"; };
+		36475B73229B6B0E00B582F9 /* RIODungeonSectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIODungeonSectionController.m; sourceTree = "<group>"; };
+		36475B75229B6B2700B582F9 /* RIODungeonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIODungeonCell.h; sourceTree = "<group>"; };
+		36475B76229B6B2700B582F9 /* RIODungeonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RIODungeonCell.m; sourceTree = "<group>"; };
+		36475B78229B963C00B582F9 /* RIODungeonViewModel+IGListDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RIODungeonViewModel+IGListDiffable.h"; sourceTree = "<group>"; };
+		36475B79229B963C00B582F9 /* RIODungeonViewModel+IGListDiffable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RIODungeonViewModel+IGListDiffable.m"; sourceTree = "<group>"; };
 		36480A512287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RIOCharacterPreviewViewModel+IGListDiffable.h"; sourceTree = "<group>"; };
 		36480A522287791F00C9D19F /* RIOCharacterPreviewViewModel+IGListDiffable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RIOCharacterPreviewViewModel+IGListDiffable.m"; sourceTree = "<group>"; };
 		36BF9AA622889AE20009870E /* RIOCharacterHeaderSectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RIOCharacterHeaderSectionController.h; sourceTree = "<group>"; };
@@ -168,6 +182,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36475B6C229B6A8F00B582F9 /* Dungeon */ = {
+			isa = PBXGroup;
+			children = (
+				36475B6D229B6AB300B582F9 /* RIODungeonViewModel.value */,
+				36475B6F229B6AE800B582F9 /* RIODungeonViewModel.h */,
+				36475B70229B6AE900B582F9 /* RIODungeonViewModel.m */,
+				36475B78229B963C00B582F9 /* RIODungeonViewModel+IGListDiffable.h */,
+				36475B79229B963C00B582F9 /* RIODungeonViewModel+IGListDiffable.m */,
+				36475B72229B6B0E00B582F9 /* RIODungeonSectionController.h */,
+				36475B73229B6B0E00B582F9 /* RIODungeonSectionController.m */,
+				36475B75229B6B2700B582F9 /* RIODungeonCell.h */,
+				36475B76229B6B2700B582F9 /* RIODungeonCell.m */,
+			);
+			path = Dungeon;
+			sourceTree = "<group>";
+		};
+		36475B7B229B98E100B582F9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				36BF9AA922889B330009870E /* RIOCharacterHeaderViewModel.value */,
+				36BF9AAB22889C150009870E /* RIOCharacterHeaderViewModel.h */,
+				36BF9AAC22889C150009870E /* RIOCharacterHeaderViewModel.m */,
+				36BF9AAE22889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.h */,
+				36BF9AAF22889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.m */,
+				36BF9AA622889AE20009870E /* RIOCharacterHeaderSectionController.h */,
+				36BF9AA722889AE20009870E /* RIOCharacterHeaderSectionController.m */,
+				36BF9AB122889F4B0009870E /* RIOCharacterHeaderCell.h */,
+				36BF9AB222889F4B0009870E /* RIOCharacterHeaderCell.m */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		65AC241815E12F401EC8F7BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,17 +226,10 @@
 		AC0A9ACE21900851002BD60F /* Character */ = {
 			isa = PBXGroup;
 			children = (
+				36475B7B229B98E100B582F9 /* Header */,
+				36475B6C229B6A8F00B582F9 /* Dungeon */,
 				AC0A9AD121900965002BD60F /* RIOCharacterViewController.h */,
 				AC0A9AD221900965002BD60F /* RIOCharacterViewController.m */,
-				36BF9AA922889B330009870E /* RIOCharacterHeaderViewModel.value */,
-				36BF9AAB22889C150009870E /* RIOCharacterHeaderViewModel.h */,
-				36BF9AAC22889C150009870E /* RIOCharacterHeaderViewModel.m */,
-				36BF9AAE22889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.h */,
-				36BF9AAF22889E420009870E /* RIOCharacterHeaderViewModel+IGListDiffable.m */,
-				36BF9AA622889AE20009870E /* RIOCharacterHeaderSectionController.h */,
-				36BF9AA722889AE20009870E /* RIOCharacterHeaderSectionController.m */,
-				36BF9AB122889F4B0009870E /* RIOCharacterHeaderCell.h */,
-				36BF9AB222889F4B0009870E /* RIOCharacterHeaderCell.m */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -415,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36475B6E229B6AB300B582F9 /* RIODungeonViewModel.value in Resources */,
 				ACDE1ACC219B547D009D5556 /* RIOGuild.value in Resources */,
 				ACFF0D16219D451F008BDD02 /* RIOTextStackViewModel.value in Resources */,
 				AC3F9F1A21882CF200679F1F /* LaunchScreen.storyboard in Resources */,
@@ -460,12 +500,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36475B71229B6AE900B582F9 /* RIODungeonViewModel.m in Sources */,
 				AC0CE031219E2FD400970B5E /* RIOMythicPlusBestRun.m in Sources */,
+				36475B77229B6B2700B582F9 /* RIODungeonCell.m in Sources */,
+				36475B7A229B963C00B582F9 /* RIODungeonViewModel+IGListDiffable.m in Sources */,
 				AC0A9AD321900965002BD60F /* RIOCharacterViewController.m in Sources */,
 				36BF9AAD22889C150009870E /* RIOCharacterHeaderViewModel.m in Sources */,
 				AC3F9F1D21882CF300679F1F /* main.m in Sources */,
 				ACCAEF4D219792A6002F76C4 /* RIOCharacterCache.m in Sources */,
 				ACA03C6D2189A11B00BAA882 /* RIOCharacterPreviewSectionController.m in Sources */,
+				36475B74229B6B0E00B582F9 /* RIODungeonSectionController.m in Sources */,
 				ACCAEF5021979357002F76C4 /* RIOCollections.m in Sources */,
 				ACA03C6A21899F0000BAA882 /* RIOCharacterPreviewViewModel.m in Sources */,
 				ACF60E8B2189991400E30606 /* RIOCharacterListViewController.m in Sources */,
