@@ -324,8 +324,6 @@
 		ACF60E85218998C300E30606 /* CharacterList */ = {
 			isa = PBXGroup;
 			children = (
-				ACF60E892189991400E30606 /* RIOCharacterListViewController.h */,
-				ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */,
 				ACA03C6921899F0000BAA882 /* RIOCharacterPreviewViewModel.h */,
 				ACA03C6821899F0000BAA882 /* RIOCharacterPreviewViewModel.m */,
 				ACCAEF44219786AF002F76C4 /* RIOCharacterPreviewViewModel.value */,
@@ -337,6 +335,8 @@
 				ACA03C6C2189A11B00BAA882 /* RIOCharacterPreviewSectionController.m */,
 				ACA03C6E2189A21700BAA882 /* RIOCharacterPreviewCell.h */,
 				ACA03C6F2189A21700BAA882 /* RIOCharacterPreviewCell.m */,
+				ACF60E892189991400E30606 /* RIOCharacterListViewController.h */,
+				ACF60E8A2189991400E30606 /* RIOCharacterListViewController.m */,
 			);
 			path = CharacterList;
 			sourceTree = "<group>";

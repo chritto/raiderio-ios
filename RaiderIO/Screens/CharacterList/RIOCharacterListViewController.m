@@ -29,22 +29,20 @@ RIOCharacterCacheListener>
     RIOCharacterCache *_characterCache;
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-        _characterCache = [RIOCharacterCache new];
-        [_characterCache addListener:self];
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    _characterCache = [RIOCharacterCache new];
+    [_characterCache addListener:self];
 
     self.navigationItem.title = @"Characters";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(_didTapAdd)];
 
     UICollectionViewLayout * const layout = [UICollectionViewFlowLayout new];
     UICollectionView * const collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    UIRefreshControl * const refreshControl = [UIRefreshControl new];
+    [refreshControl addTarget:self action:@selector(_needsRefresh:) forControlEvents:UIControlEventValueChanged];
+    collectionView.refreshControl = refreshControl;
     collectionView.alwaysBounceVertical = YES;
     collectionView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:collectionView];
@@ -110,6 +108,13 @@ RIOCharacterCacheListener>
     return @[unitedStates, europe, korea, taiwan];
 }
 
+#pragma mark - Refreshing
+
+- (void)_needsRefresh:(UIRefreshControl *)refreshControl {
+    [_characterCache clearCache];
+    [_listAdapter performUpdatesAnimated:YES completion:nil];
+}
+
 #pragma mark - IGListAdapterDataSource
 
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
@@ -148,6 +153,7 @@ RIOCharacterCacheListener>
 
 - (void)characterCacheDidUpdate {
     [_listAdapter performUpdatesAnimated:YES completion:nil];
+    [_collectionView.refreshControl endRefreshing];
 }
 
 @end

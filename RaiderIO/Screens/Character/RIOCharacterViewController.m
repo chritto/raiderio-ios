@@ -10,32 +10,38 @@
 
 #import <IGListKit/IGListKit.h>
 
-#import "RIOCharacterService.h"
+#import "RIOCharacter.h"
+#import "RIOCharacterCache.h"
 #import "RIOCharacterHeaderSectionController.h"
 #import "RIOCharacterHeaderViewModel.h"
 #import "RIOCharacterHeaderViewModel+IGListDiffable.h"
+#import "RIOCharacterID.h"
 #import "RIODungeonViewModel.h"
 #import "RIODungeonSectionController.h"
 
 @interface RIOCharacterViewController ()
 <
-IGListAdapterDataSource
+IGListAdapterDataSource,
+RIOCharacterCacheListener
 >
 
 @end
 
 @implementation RIOCharacterViewController {
+    RIOCharacterID *_characterID;
+    RIOCharacterCache *_characterCache;
     RIOCharacter *_character;
-    RIOCharacterService *_characterService;
 
     UICollectionView *_collectionView;
     IGListAdapter *_listAdapter;
 }
 
-- (instancetype)initWithCharacter:(RIOCharacter *)character {
+- (instancetype)initWithCharacterID:(RIOCharacterID *)characterID
+                     characterCache:(RIOCharacterCache *)characterCache {
     if (self = [super init]) {
-        _character = character;
-        _characterService = [RIOCharacterService new];
+        _characterID = characterID;
+        _characterCache = characterCache;
+        [_characterCache addCharacterListener:characterID listener:self];
     }
     return self;
 }
@@ -43,13 +49,17 @@ IGListAdapterDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.navigationItem.title = _character.name;
+    self.navigationItem.title = _characterID.name;
 
     UICollectionViewFlowLayout * const layout = [UICollectionViewFlowLayout new];
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero
                                          collectionViewLayout:layout];
     _collectionView.alwaysBounceVertical = YES;
     _collectionView.backgroundColor = [UIColor whiteColor];
+    UIRefreshControl * const refreshControl = [UIRefreshControl new];
+    [refreshControl beginRefreshing];
+    [refreshControl addTarget:self action:@selector(_needsRefresh:) forControlEvents:UIControlEventValueChanged];
+    _collectionView.refreshControl = refreshControl;
     [self.view addSubview:_collectionView];
     
     IGListAdapterUpdater *updater = [IGListAdapterUpdater new];
@@ -57,6 +67,8 @@ IGListAdapterDataSource
     listAdapter.dataSource = self;
     listAdapter.collectionView = _collectionView;
     _listAdapter = listAdapter;
+
+    [self _loadCharacter];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -65,9 +77,18 @@ IGListAdapterDataSource
     _collectionView.frame = self.view.bounds;
 }
 
+#pragma mark - RIOCharacterCacheListener
+
+- (void)characterCacheDidUpdate {
+    [self _loadCharacter];
+}
+
 #pragma mark - IGListAdapterDataSource
 
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter {
+    if (_character == nil) {
+        return @[];
+    }
     RIOCharacterHeaderViewModel * const header =
     [[RIOCharacterHeaderViewModel alloc] initWithName:_character.name
                                          thumbnailURL:_character.thumbnailURL
@@ -100,6 +121,21 @@ IGListAdapterDataSource
     label.text = @"Character not found.";
     label.textAlignment = NSTextAlignmentCenter;
     return label;
+}
+
+#pragma mark - Private
+
+- (void)_loadCharacter {
+    _character = [_characterCache characterWithID:_characterID];
+    if (_character != nil) {
+        [_collectionView.refreshControl endRefreshing];
+        [_listAdapter performUpdatesAnimated:YES completion:nil];
+    }
+}
+
+- (void)_needsRefresh:(UIRefreshControl *)refreshControl {
+    [_characterCache clearCache];
+    [self _loadCharacter];
 }
 
 #pragma mark - Helpers

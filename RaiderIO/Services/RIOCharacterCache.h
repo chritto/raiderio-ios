@@ -25,9 +25,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable RIOCharacter *)characterWithID:(RIOCharacterID *)characterID;
 
-- (void)addListener:(id<RIOCharacterCacheListener>)listener;
+- (void)clearCache;
 
+/**
+ * Generic listeners for any cache update
+ */
+- (void)addListener:(id<RIOCharacterCacheListener>)listener;
 - (void)removeListener:(id<RIOCharacterCacheListener>)listener;
+
+/**
+ * Listeners for updates to a particular character
+ */
+- (void)addCharacterListener:(RIOCharacterID *)characterID
+                    listener:(id<RIOCharacterCacheListener>)listener;
+- (void)removeCharacterListener:(RIOCharacterID *)characterID
+                       listener:(id<RIOCharacterCacheListener>)listener;
 
 @end
 

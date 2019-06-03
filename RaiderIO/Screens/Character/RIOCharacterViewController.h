@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 
 #import "RIOMacros.h"
-#import "RIOCharacter.h"
+
+@class RIOCharacterID;
+@class RIOCharacterCache;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RIOCharacterViewController : UIViewController
 
-- (instancetype)initWithCharacter:(RIOCharacter *)character;
+- (instancetype)initWithCharacterID:(RIOCharacterID *)characterID
+                     characterCache:(RIOCharacterCache *)characterCache;
 
 RIO_VIEWCONTROLLER_INIT_UNAVAILABLE
 

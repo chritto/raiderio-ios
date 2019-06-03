@@ -39,11 +39,9 @@
 }
 
 - (void)didSelectItemAtIndex:(NSInteger)index {
-    RIOCharacter * const character = [_characterCache characterWithID:self.object.characterID];
-    if (character != nil) {
-        RIOCharacterViewController * const characterViewController = [[RIOCharacterViewController alloc] initWithCharacter:character];
-        [self.viewController.navigationController pushViewController:characterViewController animated:YES];
-    }
+    RIOCharacterViewController * const characterViewController = [[RIOCharacterViewController alloc] initWithCharacterID:self.object.characterID
+                                                                                                          characterCache:_characterCache];
+    [self.viewController.navigationController pushViewController:characterViewController animated:YES];
     [self.collectionContext deselectItemAtIndex:index sectionController:self animated:YES];
 }
 

@@ -16,16 +16,17 @@
 
     NSMutableDictionary<RIOCharacterID *, RIOCharacter *> *_cache;
     NSMutableSet<RIOCharacterID *> *_fetching;
-    NSPointerArray *_listeners;
+    NSPointerArray *_genericListeners;
+    NSMutableDictionary<RIOCharacterID *, NSPointerArray *> *_characterListeners;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
         _service = [RIOCharacterService new];
+        _genericListeners = [NSPointerArray weakObjectsPointerArray];
+        _characterListeners = [NSMutableDictionary new];
 
-        _cache = [NSMutableDictionary new];
-        _fetching = [NSMutableSet new];
-        _listeners = [NSPointerArray weakObjectsPointerArray];
+        [self _setupEmptyCache];
     }
     return self;
 }
@@ -47,18 +48,49 @@
     return character;
 }
 
+- (void)clearCache {
+    [self _setupEmptyCache];
+}
+
 - (void)addListener:(id<RIOCharacterCacheListener>)listener {
-    [_listeners addPointer:(__bridge void *)listener];
+    [_genericListeners addPointer:(__bridge void *)listener];
 }
 
 - (void)removeListener:(id<RIOCharacterCacheListener>)listener {
-    const NSUInteger listenerIndex = [[_listeners allObjects] indexOfObject:listener];
+    const NSUInteger listenerIndex = [[_genericListeners allObjects] indexOfObject:listener];
     if (listenerIndex != NSNotFound) {
-        [_listeners removePointerAtIndex:listenerIndex];
+        [_genericListeners removePointerAtIndex:listenerIndex];
+    }
+}
+
+- (void)addCharacterListener:(RIOCharacterID *)characterID
+                    listener:(id<RIOCharacterCacheListener>)listener {
+    if (_characterListeners[characterID] == nil) {
+        _characterListeners[characterID] = [NSPointerArray weakObjectsPointerArray];
+    }
+
+    [_characterListeners[characterID] addPointer:(__bridge void *)listener];
+}
+
+- (void)removeCharacterListener:(RIOCharacterID *)characterID
+                       listener:(id<RIOCharacterCacheListener>)listener {
+    NSPointerArray *characterListeners = _characterListeners[characterID];
+    [characterListeners compact];
+    if (characterListeners.count == 0) {
+        return;
+    }
+    const NSUInteger listenerIndex = [[characterListeners allObjects] indexOfObject:listener];
+    if (listenerIndex != NSNotFound) {
+        [characterListeners removePointerAtIndex:listenerIndex];
     }
 }
 
 #pragma mark - Private
+
+- (void)_setupEmptyCache {
+    _cache = [NSMutableDictionary new];
+    _fetching = [NSMutableSet new];
+}
 
 - (void)_beginFetchingCharacterIfNeeded:(RIOCharacterID *)characterID {
     if ([_fetching containsObject:characterID]) {
@@ -69,13 +101,15 @@
     [_service fetchCharacterWithID:characterID completion:^(RIOCharacter * _Nullable character) {
         self->_cache[characterID] = character;
         [self->_fetching removeObject:characterID];
-        [self _notifyListenersOfCacheUpdate];
+        [self _notifyListenersOfCacheUpdateForCharacterID:characterID];
     }];
 }
 
-- (void)_notifyListenersOfCacheUpdate {
-    NSArray<id<RIOCharacterCacheListener>> * const listeners = [_listeners allObjects];
-    for (id<RIOCharacterCacheListener> listener in listeners) {
+- (void)_notifyListenersOfCacheUpdateForCharacterID:(RIOCharacterID *)characterID {
+    for (id<RIOCharacterCacheListener> listener in _genericListeners) {
+        [listener characterCacheDidUpdate];
+    }
+    for (id<RIOCharacterCacheListener> listener in _characterListeners[characterID]) {
         [listener characterCacheDidUpdate];
     }
 }

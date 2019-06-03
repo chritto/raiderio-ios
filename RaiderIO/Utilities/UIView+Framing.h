@@ -24,7 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (Framing)
 
-- (void)setPosition:(CGPoint)position size:(CGSize)size anchorPoint:(RIOAnchorPoint)anchorPoint;
+- (void)setPosition:(CGPoint)position
+               size:(CGSize)size
+        anchorPoint:(RIOAnchorPoint)anchorPoint;
 
 @end
 
